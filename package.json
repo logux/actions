@@ -76,12 +76,21 @@
   },
   "eslintConfig": {
     "extends": "@logux/eslint-config/ts",
+    "globals": {
+      "jsdom": false
+    },
     "rules": {
       "@typescript-eslint/no-explicit-any": "off"
     },
-    "globals": {
-      "jsdom": false
-    }
+    "overrides": [
+      {
+        "files": "./processing/index.d.ts",
+        "rules": {
+          "prefer-let/prefer-let": "off",
+          "import/export": "off"
+        }
+      }
+    ]
   },
   "eslintIgnore": [
     "**/errors.ts"
