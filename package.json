@@ -29,6 +29,7 @@
     "@logux/eslint-config": "^44.1.2",
     "@logux/sharec-config": "^0.8.5",
     "@types/jest": "^26.0.20",
+    "@types/ws": "^7.4.0",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
     "check-dts": "^0.4.4",
@@ -75,6 +76,9 @@
   },
   "eslintConfig": {
     "extends": "@logux/eslint-config/ts",
+    "rules": {
+      "@typescript-eslint/no-explicit-any": "off"
+    },
     "globals": {
       "jsdom": false
     }
