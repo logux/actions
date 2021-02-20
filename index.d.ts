@@ -10,4 +10,10 @@ export {
   LoguxUndoAction,
   createLoguxUndo
 } from './processing/index.js'
+export {
+  createZeroClean,
+  ZeroCleanAction,
+  ZeroAction,
+  createZero
+} from './zero-knowledge/index.js'
 export { defineAction, ActionCreator } from './define-action/index.js'
