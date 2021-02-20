@@ -6,9 +6,7 @@ type Fields = {
 
 export interface ActionCreator<A extends Action, F extends Fields> {
   type: string
-
   match: (action: AnyAction) => action is A
-
   (fields: F): A
 }
 
