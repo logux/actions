@@ -1,4 +1,10 @@
 export {
+  createLoguxUnsubscribe,
+  LoguxUnsubscribeAction,
+  LoguxSubscribeAction,
+  createLoguxSubscribe
+} from './subscriptions/index.js'
+export {
   createLoguxProcessed,
   LoguxProcessedAction,
   LoguxUndoAction,
