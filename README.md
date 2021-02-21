@@ -30,8 +30,3 @@ for build-in Logux actions.
 ```sh
 npm install @logux/actions
 ```
-
-
-## Usage
-
-*To be improved*
