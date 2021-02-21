@@ -1,7 +1,7 @@
 import { defineSyncMap } from '@logux/state'
 import { Action } from '@logux/core'
 
-import { defineCreateSyncMap } from '../index.js'
+import { defineCreateSyncMap } from './index.js'
 
 let User = defineSyncMap<{ name: string; age: number; role?: string }>('users')
 

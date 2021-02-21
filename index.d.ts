@@ -11,20 +11,6 @@ export {
   createLoguxUndo
 } from './processing/index.js'
 export {
-  SyncMapCreatedAction,
-  SyncMapChangedAction,
-  SyncMapDeletedAction,
-  defineCreatedSyncMap,
-  defineChangedSyncMap,
-  defineDeletedSyncMap,
-  SyncMapCreateAction,
-  SyncMapChangeAction,
-  SyncMapDeleteAction,
-  defineCreateSyncMap,
-  defineChangeSyncMap,
-  defineDeleteSyncMap
-} from './sync-map/index.js'
-export {
   createZeroClean,
   ZeroCleanAction,
   ZeroAction,

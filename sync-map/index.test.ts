@@ -7,7 +7,7 @@ import {
   defineCreateSyncMap,
   defineChangeSyncMap,
   defineDeleteSyncMap
-} from '../index.js'
+} from './index.js'
 
 let User = defineSyncMap<{ name: string }>('users')
 
