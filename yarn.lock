@@ -554,11 +554,11 @@
 
 "@logux/actions@logux/actions":
   version "0.0.0"
-  resolved "https://codeload.github.com/logux/actions/tar.gz/6f0e32f164eaf1584cc70163df2ed010ee4fb811"
+  resolved "https://codeload.github.com/logux/actions/tar.gz/9c020cf81c734f3d36f4422fc5b5481c41d44d37"
 
 "@logux/client@logux/client#next":
   version "0.9.3"
-  resolved "https://codeload.github.com/logux/client/tar.gz/953fb10c96fbd90d31f71ed9f7f2c828849f7ee8"
+  resolved "https://codeload.github.com/logux/client/tar.gz/d6337329a39087b2390209d9977474f98ef912c3"
   dependencies:
     "@logux/actions" logux/actions
     fast-json-stable-stringify "^2.1.0"
