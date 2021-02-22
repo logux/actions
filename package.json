@@ -1,5 +1,5 @@
 {
-  "name": "@logux/state",
+  "name": "@logux/actions",
   "version": "0.0.0",
   "description": "Types and action creators for build-in Logux actions",
   "keywords": [
@@ -13,7 +13,7 @@
   "author": "Andrey Sitnik <andrey@sitnik.ru>",
   "license": "MIT",
   "homepage": "https://logux.io/",
-  "repository": "logux/state",
+  "repository": "logux/actions",
   "sideEffects": false,
   "types": "./index.d.ts",
   "type": "module",
