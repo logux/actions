@@ -1,5 +1,3 @@
-import { SyncMapBuilder } from '@logux/state'
-
 import { ActionCreator } from '../define-action/index.js'
 
 type SyncMapValues = {
@@ -52,35 +50,32 @@ export type SyncMapDeletedAction<P extends string = any> = {
   id: string
 }
 
-export function defineCreatedSyncMap<
-  P extends string,
-  V extends SyncMapValues
-> (
-  Builder: SyncMapBuilder<V>
-): ActionCreator<SyncMapCreatedAction<P, V>, { id: string; fields: V }>
+export function defineCreatedSyncMap<V extends SyncMapValues> (
+  plural: string
+): ActionCreator<SyncMapCreatedAction<string, V>, { id: string; fields: V }>
 
-export function defineCreateSyncMap<P extends string, V extends SyncMapValues> (
-  Builder: SyncMapBuilder<V>
-): ActionCreator<SyncMapCreateAction<P, V>, { id: string; fields: V }>
+export function defineCreateSyncMap<V extends SyncMapValues> (
+  plural: string
+): ActionCreator<SyncMapCreateAction<string, V>, { id: string; fields: V }>
 
-export function defineChangedSyncMap<
-  P extends string,
-  V extends SyncMapValues
-> (
-  Builder: SyncMapBuilder<V>
-): ActionCreator<SyncMapChangedAction<P, V>, { id: string; fields: Partial<V> }>
+export function defineChangedSyncMap<V extends SyncMapValues> (
+  plural: string
+): ActionCreator<
+  SyncMapChangedAction<string, V>,
+  { id: string; fields: Partial<V> }
+>
 
-export function defineChangeSyncMap<P extends string, V extends SyncMapValues> (
-  Builder: SyncMapBuilder<V>
-): ActionCreator<SyncMapChangeAction<P, V>, { id: string; fields: Partial<V> }>
+export function defineChangeSyncMap<V extends SyncMapValues> (
+  plural: string
+): ActionCreator<
+  SyncMapChangeAction<string, V>,
+  { id: string; fields: Partial<V> }
+>
 
-export function defineDeletedSyncMap<
-  P extends string,
-  V extends SyncMapValues
-> (
-  Builder: SyncMapBuilder<V>
-): ActionCreator<SyncMapDeletedAction<P>, { id: string }>
+export function defineDeletedSyncMap (
+  plural: string
+): ActionCreator<SyncMapDeletedAction<string>, { id: string }>
 
-export function defineDeleteSyncMap<P extends string, V extends SyncMapValues> (
-  Builder: SyncMapBuilder<V>
-): ActionCreator<SyncMapDeleteAction<P>, { id: string }>
+export function defineDeleteSyncMap (
+  plural: string
+): ActionCreator<SyncMapDeleteAction<string>, { id: string }>

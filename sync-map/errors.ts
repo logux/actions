@@ -1,15 +1,21 @@
 import { defineSyncMap } from '@logux/state'
 import { Action } from '@logux/core'
 
-import { defineCreateSyncMap } from './index.js'
+import { defineCreateSyncMap } from '../index.js'
 
-let User = defineSyncMap<{ name: string; age: number; role?: string }>('users')
+type UserValue = {
+  name: string
+  age: number
+  role?: string
+}
 
-let createUserCreate = defineCreateSyncMap(User)
+let User = defineSyncMap<UserValue>('users')
+
+let createUserCreate = defineCreateSyncMap<UserValue>(User.plural)
 
 function processAction (action: Action) {
   if (createUserCreate.match(action)) {
-    // THROWS 'firstName' does not exist on type '{ name: string;
+    // THROWS 'firstName' does not exist on type 'UserValue'
     console.log(action.fields.firstName)
   }
 }

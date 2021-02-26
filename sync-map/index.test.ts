@@ -7,12 +7,15 @@ import {
   defineCreateSyncMap,
   defineChangeSyncMap,
   defineDeleteSyncMap
-} from './index.js'
+} from '../index.js'
 
-let User = defineSyncMap<{ name: string }>('users')
+type UserValue = {
+  name: string
+}
+let User = defineSyncMap<UserValue>('users')
 
 it('creates created action', () => {
-  let createUserCreated = defineCreatedSyncMap(User)
+  let createUserCreated = defineCreatedSyncMap<UserValue>(User.plural)
   expect(createUserCreated({ id: 'uuid', fields: { name: 'A' } })).toEqual({
     type: 'users/created',
     id: 'uuid',
@@ -21,7 +24,7 @@ it('creates created action', () => {
 })
 
 it('creates changed action', () => {
-  let createUserChanged = defineChangedSyncMap(User)
+  let createUserChanged = defineChangedSyncMap<UserValue>(User.plural)
   expect(createUserChanged({ id: 'uuid', fields: { name: 'A' } })).toEqual({
     type: 'users/changed',
     id: 'uuid',
@@ -30,7 +33,7 @@ it('creates changed action', () => {
 })
 
 it('creates deleted action', () => {
-  let createUserDeleted = defineDeletedSyncMap(User)
+  let createUserDeleted = defineDeletedSyncMap(User.plural)
   expect(createUserDeleted({ id: 'uuid' })).toEqual({
     type: 'users/deleted',
     id: 'uuid'
@@ -38,7 +41,7 @@ it('creates deleted action', () => {
 })
 
 it('creates create action', () => {
-  let createUserCreate = defineCreateSyncMap(User)
+  let createUserCreate = defineCreateSyncMap<UserValue>(User.plural)
   expect(createUserCreate({ id: 'uuid', fields: { name: 'A' } })).toEqual({
     type: 'users/create',
     id: 'uuid',
@@ -47,7 +50,7 @@ it('creates create action', () => {
 })
 
 it('creates change action', () => {
-  let createUserChange = defineChangeSyncMap(User)
+  let createUserChange = defineChangeSyncMap<UserValue>(User.plural)
   expect(createUserChange({ id: 'uuid', fields: { name: 'A' } })).toEqual({
     type: 'users/change',
     id: 'uuid',
@@ -56,7 +59,7 @@ it('creates change action', () => {
 })
 
 it('creates delete action', () => {
-  let createUserDelete = defineDeleteSyncMap(User)
+  let createUserDelete = defineDeleteSyncMap(User.plural)
   expect(createUserDelete({ id: 'uuid' })).toEqual({
     type: 'users/delete',
     id: 'uuid'

@@ -1,4 +1,18 @@
 export {
+  defineCreatedSyncMap,
+  defineChangedSyncMap,
+  defineDeletedSyncMap,
+  SyncMapCreatedAction,
+  SyncMapChangedAction,
+  SyncMapDeletedAction,
+  SyncMapCreateAction,
+  SyncMapChangeAction,
+  SyncMapDeleteAction,
+  defineCreateSyncMap,
+  defineChangeSyncMap,
+  defineDeleteSyncMap
+} from './sync-map/index.js'
+export {
   createLoguxUnsubscribe,
   LoguxUnsubscribeAction,
   LoguxSubscribeAction,

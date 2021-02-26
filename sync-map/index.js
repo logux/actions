@@ -1,25 +1,25 @@
 import { defineAction } from '../define-action/index.js'
 
-export function defineCreatedSyncMap (Builder) {
-  return defineAction(`${Builder.plural}/created`)
+export function defineCreatedSyncMap (plural) {
+  return defineAction(`${plural}/created`)
 }
 
-export function defineCreateSyncMap (Builder) {
-  return defineAction(`${Builder.plural}/create`)
+export function defineCreateSyncMap (plural) {
+  return defineAction(`${plural}/create`)
 }
 
-export function defineChangedSyncMap (Builder) {
-  return defineAction(`${Builder.plural}/changed`)
+export function defineChangedSyncMap (plural) {
+  return defineAction(`${plural}/changed`)
 }
 
-export function defineChangeSyncMap (Builder) {
-  return defineAction(`${Builder.plural}/change`)
+export function defineChangeSyncMap (plural) {
+  return defineAction(`${plural}/change`)
 }
 
-export function defineDeletedSyncMap (Builder) {
-  return defineAction(`${Builder.plural}/deleted`)
+export function defineDeletedSyncMap (plural) {
+  return defineAction(`${plural}/deleted`)
 }
 
-export function defineDeleteSyncMap (Builder) {
-  return defineAction(`${Builder.plural}/delete`)
+export function defineDeleteSyncMap (plural) {
+  return defineAction(`${plural}/delete`)
 }
