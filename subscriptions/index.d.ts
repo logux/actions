@@ -3,6 +3,7 @@ import { ActionCreator } from '../define-action/index.js'
 export type LoguxSubscribeAction = {
   type: 'logux/subscribe'
   channel: string
+  creating?: true
   filter?: {
     [key: string]: string | number | boolean
   }
