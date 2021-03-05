@@ -52,24 +52,30 @@ export type SyncMapDeletedAction<P extends string = any> = {
 
 export function defineCreatedSyncMap<V extends SyncMapValues> (
   plural: string
-): ActionCreator<SyncMapCreatedAction<string, V>, { id: string; fields: V }>
+): ActionCreator<
+  SyncMapCreatedAction<string, Omit<V, 'id'>>,
+  { id: string; fields: Omit<V, 'id'> }
+>
 
 export function defineCreateSyncMap<V extends SyncMapValues> (
   plural: string
-): ActionCreator<SyncMapCreateAction<string, V>, { id: string; fields: V }>
+): ActionCreator<
+  SyncMapCreateAction<string, Omit<V, 'id'>>,
+  { id: string; fields: Omit<V, 'id'> }
+>
 
 export function defineChangedSyncMap<V extends SyncMapValues> (
   plural: string
 ): ActionCreator<
-  SyncMapChangedAction<string, V>,
-  { id: string; fields: Partial<V> }
+  SyncMapChangedAction<string, Omit<V, 'id'>>,
+  { id: string; fields: Partial<Omit<V, 'id'>> }
 >
 
 export function defineChangeSyncMap<V extends SyncMapValues> (
   plural: string
 ): ActionCreator<
-  SyncMapChangeAction<string, V>,
-  { id: string; fields: Partial<V> }
+  SyncMapChangeAction<string, Omit<V, 'id'>>,
+  { id: string; fields: Partial<Omit<V, 'id'>> }
 >
 
 export function defineDeletedSyncMap (

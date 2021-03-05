@@ -4,6 +4,7 @@ import { Action } from '@logux/core'
 import { defineCreateSyncMap } from '../index.js'
 
 type UserValue = {
+  id: string
   name: string
   age: number
   role?: string
