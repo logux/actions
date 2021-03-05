@@ -15,7 +15,7 @@ let createUserCreate = defineCreateSyncMap<UserValue>(User.plural)
 
 function processAction (action: Action) {
   if (createUserCreate.match(action)) {
-    // THROWS 'firstName' does not exist on type 'UserValue'
+    // THROWS 'firstName' does not exist on type 'Omit<UserValue
     console.log(action.fields.firstName)
   }
 }

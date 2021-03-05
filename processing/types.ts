@@ -2,7 +2,7 @@ import { Action } from '@logux/core'
 
 import { createLoguxUndo } from '../index.js'
 
-function processAction (action: Action) {
+function processAction (action: Action): void {
   if (createLoguxUndo.match(action)) {
     console.log(action.action)
   }

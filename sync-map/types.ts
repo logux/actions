@@ -14,7 +14,7 @@ let User = defineSyncMap<UserValue>('users')
 
 let createUserCreate = defineCreateSyncMap<UserValue>(User.plural)
 
-function processAction (action: Action) {
+function processAction (action: Action): void {
   if (createUserCreate.match(action)) {
     console.log(action.fields.name)
   }

@@ -8,7 +8,7 @@ type RenameAction = {
 }
 let createRename = defineAction<RenameAction, { name: string }>('rename')
 
-function processAction (action: Action) {
+function processAction (action: Action): void {
   if (createRename.match(action)) {
     console.log(action.name)
   }
