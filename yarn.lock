@@ -574,7 +574,7 @@
 
 "@logux/actions@logux/actions":
   version "0.0.0"
-  resolved "https://codeload.github.com/logux/actions/tar.gz/fd9f07476cb7d8b78682f02bdd123bfc830de7d5"
+  resolved "https://codeload.github.com/logux/actions/tar.gz/2ca3a7ea668f8dc51e6d12dde9c8654cc81f9a7a"
 
 "@logux/client@logux/client#next":
   version "0.9.3"
@@ -588,7 +588,7 @@
 
 "@logux/core@logux/core#next":
   version "0.6.2"
-  resolved "https://codeload.github.com/logux/core/tar.gz/744d80568667b0109bee186caa9b6fb4736d0260"
+  resolved "https://codeload.github.com/logux/core/tar.gz/3ba49e8e5760d4700eee473eef4a6c219f2e4062"
   dependencies:
     nanoevents "^5.1.12"
 
