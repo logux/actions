@@ -1,6 +1,7 @@
 import { defineSyncMap } from '@logux/state'
 
 import {
+  defineSyncMapActions,
   defineCreatedSyncMap,
   defineChangedSyncMap,
   defineDeletedSyncMap,
@@ -64,4 +65,16 @@ it('creates delete action', () => {
     type: 'users/delete',
     id: 'uuid'
   })
+})
+
+it('creates everything', () => {
+  let actions = defineSyncMapActions<UserValue>(User.plural)
+  expect(actions.map(i => i.type)).toEqual([
+    'users/create',
+    'users/change',
+    'users/delete',
+    'users/created',
+    'users/changed',
+    'users/deleted'
+  ])
 })
