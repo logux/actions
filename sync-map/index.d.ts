@@ -1,6 +1,6 @@
 import { ActionCreator } from '../define-action/index.js'
 
-type SyncMapValues = {
+export type SyncMapValues = {
   [key: string]: string | number | boolean | undefined
 }
 
@@ -10,7 +10,7 @@ export type SyncMapCreateAction<
 > = {
   type: `${P}/create`
   id: string
-  fields: V
+  fields: Omit<V, 'id'>
 }
 
 export type SyncMapCreatedAction<
@@ -19,7 +19,7 @@ export type SyncMapCreatedAction<
 > = {
   type: `${P}/created`
   id: string
-  fields: V
+  fields: Omit<V, 'id'>
 }
 
 export type SyncMapChangeAction<
@@ -28,7 +28,7 @@ export type SyncMapChangeAction<
 > = {
   type: `${P}/change`
   id: string
-  fields: Partial<V>
+  fields: Partial<Omit<V, 'id'>>
 }
 
 export type SyncMapChangedAction<
@@ -37,7 +37,7 @@ export type SyncMapChangedAction<
 > = {
   type: `${P}/changed`
   id: string
-  fields: Partial<V>
+  fields: Partial<Omit<V, 'id'>>
 }
 
 export type SyncMapDeleteAction<P extends string = any> = {
@@ -53,28 +53,28 @@ export type SyncMapDeletedAction<P extends string = any> = {
 export function defineCreatedSyncMap<V extends SyncMapValues> (
   plural: string
 ): ActionCreator<
-  SyncMapCreatedAction<string, Omit<V, 'id'>>,
+  SyncMapCreatedAction<string, V>,
   { id: string; fields: Omit<V, 'id'> }
 >
 
 export function defineCreateSyncMap<V extends SyncMapValues> (
   plural: string
 ): ActionCreator<
-  SyncMapCreateAction<string, Omit<V, 'id'>>,
+  SyncMapCreateAction<string, V>,
   { id: string; fields: Omit<V, 'id'> }
 >
 
 export function defineChangedSyncMap<V extends SyncMapValues> (
   plural: string
 ): ActionCreator<
-  SyncMapChangedAction<string, Omit<V, 'id'>>,
+  SyncMapChangedAction<string, V>,
   { id: string; fields: Partial<Omit<V, 'id'>> }
 >
 
 export function defineChangeSyncMap<V extends SyncMapValues> (
   plural: string
 ): ActionCreator<
-  SyncMapChangeAction<string, Omit<V, 'id'>>,
+  SyncMapChangeAction<string, V>,
   { id: string; fields: Partial<Omit<V, 'id'>> }
 >
 
