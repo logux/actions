@@ -23,3 +23,14 @@ export function defineDeletedSyncMap (plural) {
 export function defineDeleteSyncMap (plural) {
   return defineAction(`${plural}/delete`)
 }
+
+export function defineSyncMapActions (plural) {
+  return [
+    defineCreatedSyncMap(plural),
+    defineChangedSyncMap(plural),
+    defineDeletedSyncMap(plural),
+    defineCreateSyncMap(plural),
+    defineChangeSyncMap(plural),
+    defineDeleteSyncMap(plural)
+  ]
+}
