@@ -26,11 +26,11 @@ export function defineDeleteSyncMap (plural) {
 
 export function defineSyncMapActions (plural) {
   return [
-    defineCreatedSyncMap(plural),
-    defineChangedSyncMap(plural),
-    defineDeletedSyncMap(plural),
     defineCreateSyncMap(plural),
     defineChangeSyncMap(plural),
-    defineDeleteSyncMap(plural)
+    defineDeleteSyncMap(plural),
+    defineCreatedSyncMap(plural),
+    defineChangedSyncMap(plural),
+    defineDeletedSyncMap(plural)
   ]
 }

@@ -90,15 +90,6 @@ export function defineSyncMapActions<V extends SyncMapValues> (
   plural: string
 ): [
   ActionCreator<
-    SyncMapCreatedAction<string, V>,
-    { id: string; fields: Omit<V, 'id'> }
-  >,
-  ActionCreator<
-    SyncMapChangedAction<string, V>,
-    { id: string; fields: Partial<Omit<V, 'id'>> }
-  >,
-  ActionCreator<SyncMapDeletedAction<string>, { id: string }>,
-  ActionCreator<
     SyncMapCreateAction<string, V>,
     { id: string; fields: Omit<V, 'id'> }
   >,
@@ -106,5 +97,14 @@ export function defineSyncMapActions<V extends SyncMapValues> (
     SyncMapChangeAction<string, V>,
     { id: string; fields: Partial<Omit<V, 'id'>> }
   >,
-  ActionCreator<SyncMapDeleteAction<string>, { id: string }>
+  ActionCreator<SyncMapDeleteAction<string>, { id: string }>,
+  ActionCreator<
+    SyncMapCreatedAction<string, V>,
+    { id: string; fields: Omit<V, 'id'> }
+  >,
+  ActionCreator<
+    SyncMapChangedAction<string, V>,
+    { id: string; fields: Partial<Omit<V, 'id'>> }
+  >,
+  ActionCreator<SyncMapDeletedAction<string>, { id: string }>
 ]
