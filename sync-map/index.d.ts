@@ -4,38 +4,26 @@ export type SyncMapValues = {
   [key: string]: string | number | boolean | undefined
 }
 
-export type SyncMapCreateAction<
-  P extends string = any,
-  V extends SyncMapValues = SyncMapValues
-> = {
-  type: `${P}/create`
+export type SyncMapCreateAction<V extends SyncMapValues = SyncMapValues> = {
+  type: string
   id: string
   fields: Omit<V, 'id'>
 }
 
-export type SyncMapCreatedAction<
-  P extends string = any,
-  V extends SyncMapValues = SyncMapValues
-> = {
-  type: `${P}/created`
+export type SyncMapCreatedAction<V extends SyncMapValues = SyncMapValues> = {
+  type: string
   id: string
   fields: Omit<V, 'id'>
 }
 
-export type SyncMapChangeAction<
-  P extends string = any,
-  V extends SyncMapValues = SyncMapValues
-> = {
-  type: `${P}/change`
+export type SyncMapChangeAction<V extends SyncMapValues = SyncMapValues> = {
+  type: string
   id: string
   fields: Partial<Omit<V, 'id'>>
 }
 
-export type SyncMapChangedAction<
-  P extends string = any,
-  V extends SyncMapValues = SyncMapValues
-> = {
-  type: `${P}/changed`
+export type SyncMapChangedAction<V extends SyncMapValues = SyncMapValues> = {
+  type: string
   id: string
   fields: Partial<Omit<V, 'id'>>
 }
@@ -50,60 +38,48 @@ export type SyncMapDeletedAction<P extends string = any> = {
   id: string
 }
 
-export function defineCreatedSyncMap<V extends SyncMapValues> (
+export function defineCreatedSyncMap<V extends SyncMapValues>(
   plural: string
-): ActionCreator<
-  SyncMapCreatedAction<string, V>,
-  { id: string; fields: Omit<V, 'id'> }
->
+): ActionCreator<SyncMapCreatedAction<V>, { id: string; fields: Omit<V, 'id'> }>
 
-export function defineCreateSyncMap<V extends SyncMapValues> (
+export function defineCreateSyncMap<V extends SyncMapValues>(
   plural: string
-): ActionCreator<
-  SyncMapCreateAction<string, V>,
-  { id: string; fields: Omit<V, 'id'> }
->
+): ActionCreator<SyncMapCreateAction<V>, { id: string; fields: Omit<V, 'id'> }>
 
-export function defineChangedSyncMap<V extends SyncMapValues> (
+export function defineChangedSyncMap<V extends SyncMapValues>(
   plural: string
 ): ActionCreator<
-  SyncMapChangedAction<string, V>,
+  SyncMapChangedAction<V>,
   { id: string; fields: Partial<Omit<V, 'id'>> }
 >
 
-export function defineChangeSyncMap<V extends SyncMapValues> (
+export function defineChangeSyncMap<V extends SyncMapValues>(
   plural: string
 ): ActionCreator<
-  SyncMapChangeAction<string, V>,
+  SyncMapChangeAction<V>,
   { id: string; fields: Partial<Omit<V, 'id'>> }
 >
 
-export function defineDeletedSyncMap (
+export function defineDeletedSyncMap(
   plural: string
 ): ActionCreator<SyncMapDeletedAction<string>, { id: string }>
 
-export function defineDeleteSyncMap (
+export function defineDeleteSyncMap(
   plural: string
 ): ActionCreator<SyncMapDeleteAction<string>, { id: string }>
 
-export function defineSyncMapActions<V extends SyncMapValues> (
+export function defineSyncMapActions<V extends SyncMapValues>(
   plural: string
 ): [
+  ActionCreator<SyncMapCreateAction<V>, { id: string; fields: Omit<V, 'id'> }>,
   ActionCreator<
-    SyncMapCreateAction<string, V>,
-    { id: string; fields: Omit<V, 'id'> }
-  >,
-  ActionCreator<
-    SyncMapChangeAction<string, V>,
+    SyncMapChangeAction<V>,
     { id: string; fields: Partial<Omit<V, 'id'>> }
   >,
   ActionCreator<SyncMapDeleteAction<string>, { id: string }>,
+  ActionCreator<SyncMapCreatedAction<V>, { id: string; fields: Omit<V, 'id'> }>,
   ActionCreator<
-    SyncMapCreatedAction<string, V>,
-    { id: string; fields: Omit<V, 'id'> }
-  >,
-  ActionCreator<
-    SyncMapChangedAction<string, V>,
+    SyncMapChangedAction<V>,
     { id: string; fields: Partial<Omit<V, 'id'>> }
   >,
   ActionCreator<SyncMapDeletedAction<string>, { id: string }>
