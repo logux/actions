@@ -17,17 +17,14 @@ export type LoguxUndoAction<
   action: A
 }
 
-export const createLoguxProcessed: ActionCreator<
-  LoguxProcessedAction,
-  { id: string }
->
+export const createLoguxProcessed: ActionCreator<LoguxProcessedAction>
 
 export function createLoguxUndo<
   A extends Action = AnyAction,
   R extends string = string
-> (fields: { id: string; reason: R; action: A }): LoguxUndoAction<A, R>
+>(fields: { id: string; reason: R; action: A }): LoguxUndoAction<A, R>
 
 export namespace createLoguxUndo {
   export const type: 'logux/undo'
-  export function match (action: AnyAction): action is LoguxUndoAction
+  export function match(action: AnyAction): action is LoguxUndoAction
 }

@@ -6,9 +6,9 @@ type RenameAction = {
   type: 'rename'
   name: string
 }
-let createRename = defineAction<RenameAction, { name: string }>('rename')
+let createRename = defineAction<RenameAction>('rename')
 
-function processAction (action: Action) {
+function processAction(action: Action) {
   if (createRename.match(action)) {
     console.log(action.name)
   } else {

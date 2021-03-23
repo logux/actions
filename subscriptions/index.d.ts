@@ -21,19 +21,6 @@ export type LoguxUnsubscribeAction = {
   }
 }
 
-export const createLoguxSubscribe: ActionCreator<
-  LoguxSubscribeAction,
-  {
-    channel: string
-    filter?: LoguxSubscribeAction['filter']
-    since?: LoguxSubscribeAction['since']
-  }
->
+export const createLoguxSubscribe: ActionCreator<LoguxSubscribeAction>
 
-export const createLoguxUnsubscribe: ActionCreator<
-  LoguxSubscribeAction,
-  {
-    channel: string
-    filter?: LoguxSubscribeAction['filter']
-  }
->
+export const createLoguxUnsubscribe: ActionCreator<LoguxSubscribeAction>
