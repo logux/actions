@@ -1,7 +1,9 @@
 import { ActionCreator } from '../define-action/index.js'
 
+export type SyncMapValue = string | number | boolean | undefined
+
 export type SyncMapValues = {
-  [key: string]: string | number | boolean | undefined
+  [key: string]: SyncMapValue | SyncMapValue[]
 }
 
 export type SyncMapCreateAction<V extends SyncMapValues = SyncMapValues> = {

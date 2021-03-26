@@ -12,7 +12,8 @@ export {
   defineCreateSyncMap,
   defineChangeSyncMap,
   defineDeleteSyncMap,
-  SyncMapValues
+  SyncMapValues,
+  SyncMapValue
 } from './sync-map/index.js'
 export {
   createLoguxUnsubscribe,
