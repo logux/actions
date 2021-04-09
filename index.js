@@ -9,6 +9,7 @@ export {
 } from './sync-map/index.js'
 export {
   createLoguxUnsubscribe,
+  createLoguxSubscribed,
   createLoguxSubscribe
 } from './subscriptions/index.js'
 export { createLoguxProcessed, createLoguxUndo } from './processing/index.js'

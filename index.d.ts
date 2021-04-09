@@ -18,6 +18,8 @@ export {
 export {
   createLoguxUnsubscribe,
   LoguxUnsubscribeAction,
+  LoguxSubscribedAction,
+  createLoguxSubscribed,
   LoguxSubscribeAction,
   createLoguxSubscribe
 } from './subscriptions/index.js'

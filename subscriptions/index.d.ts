@@ -13,6 +13,11 @@ export type LoguxSubscribeAction = {
   }
 }
 
+export type LoguxSubscribedAction = {
+  type: 'logux/subscribed'
+  channel: string
+}
+
 export type LoguxUnsubscribeAction = {
   type: 'logux/unsubscribe'
   channel: string
