@@ -28,4 +28,6 @@ export type LoguxUnsubscribeAction = {
 
 export const createLoguxSubscribe: ActionCreator<LoguxSubscribeAction>
 
+export const createLoguxSubscribed: ActionCreator<LoguxSubscribedAction>
+
 export const createLoguxUnsubscribe: ActionCreator<LoguxSubscribeAction>
