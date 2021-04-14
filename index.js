@@ -8,10 +8,10 @@ export {
   defineDeleteSyncMap
 } from './sync-map/index.js'
 export {
-  createLoguxUnsubscribe,
-  createLoguxSubscribed,
-  createLoguxSubscribe
+  loguxUnsubscribe,
+  loguxSubscribed,
+  loguxSubscribe
 } from './subscriptions/index.js'
-export { createLoguxProcessed, createLoguxUndo } from './processing/index.js'
-export { createZero, createZeroClean } from './zero-knowledge/index.js'
+export { loguxProcessed, loguxUndo } from './processing/index.js'
+export { zero, zeroClean } from './zero-knowledge/index.js'
 export { defineAction } from './define-action/index.js'

@@ -5,13 +5,13 @@ it('creates actions', () => {
     type: 'rename'
     name: string
   }
-  let createRename = defineAction<RenameAction>('rename')
+  let rename = defineAction<RenameAction>('rename')
 
-  let newName = createRename({ name: 'newName' })
+  let newName = rename({ name: 'newName' })
   expect(newName).toEqual({ type: 'rename', name: 'newName' })
 
-  expect(createRename.match(newName)).toBe(true)
-  expect(createRename.match({ type: 'another' })).toBe(false)
+  expect(rename.match(newName)).toBe(true)
+  expect(rename.match({ type: 'another' })).toBe(false)
 })
 
 it('creates action by function', () => {
@@ -20,11 +20,11 @@ it('creates action by function', () => {
     id: number
     name: string
   }
-  let createRename = defineAction(
+  let rename = defineAction(
     'rename',
     (id: number, name: string): RenameAction => ({ type: 'rename', id, name })
   )
 
-  let newName = createRename(1, 'newName')
+  let newName = rename(1, 'newName')
   expect(newName).toEqual({ type: 'rename', id: 1, name: 'newName' })
 })

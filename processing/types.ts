@@ -1,15 +1,15 @@
 import { Action } from '@logux/core'
 
-import { createLoguxUndo } from '../index.js'
+import { loguxUndo } from '../index.js'
 
-function processAction (action: Action): void {
-  if (createLoguxUndo.match(action)) {
+function processAction(action: Action): void {
+  if (loguxUndo.match(action)) {
     console.log(action.action)
   }
 }
 
 processAction(
-  createLoguxUndo({
+  loguxUndo({
     id: '1 1:1:0 0',
     reason: 'error',
     action: { type: 'some' }

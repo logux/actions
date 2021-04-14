@@ -11,6 +11,6 @@ export type ZeroCleanAction = {
   id: string
 }
 
-export const createZero: ActionCreator<ZeroAction>
+export const zero: ActionCreator<ZeroAction>
 
-export const createZeroClean: ActionCreator<ZeroCleanAction>
+export const zeroClean: ActionCreator<ZeroCleanAction>

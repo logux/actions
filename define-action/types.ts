@@ -6,10 +6,10 @@ type RenameAction = {
   type: 'rename'
   name: string
 }
-let createRename = defineAction<RenameAction>('rename')
+let rename = defineAction<RenameAction>('rename')
 
 function processAction(action: Action): void {
-  if (createRename.match(action)) {
+  if (rename.match(action)) {
     console.log(action.name)
   }
 }

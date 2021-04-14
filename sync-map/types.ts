@@ -12,14 +12,14 @@ type UserValue = {
 
 let User = defineSyncMap<UserValue>('users')
 
-let createUserCreate = defineCreateSyncMap<UserValue>(User.plural)
+let userCreate = defineCreateSyncMap<UserValue>(User.plural)
 
-function processAction (action: Action): void {
-  if (createUserCreate.match(action)) {
+function processAction(action: Action): void {
+  if (userCreate.match(action)) {
     console.log(action.fields.name)
   }
 }
 
 processAction(
-  createUserCreate({ id: 'uuid', fields: { name: 'John Smith', age: 30 } })
+  userCreate({ id: 'uuid', fields: { name: 'John Smith', age: 30 } })
 )

@@ -16,23 +16,23 @@ export {
   SyncMapValue
 } from './sync-map/index.js'
 export {
-  createLoguxUnsubscribe,
   LoguxUnsubscribeAction,
   LoguxSubscribedAction,
-  createLoguxSubscribed,
   LoguxSubscribeAction,
-  createLoguxSubscribe
+  loguxUnsubscribe,
+  loguxSubscribed,
+  loguxSubscribe
 } from './subscriptions/index.js'
 export {
-  createLoguxProcessed,
   LoguxProcessedAction,
   LoguxUndoAction,
-  createLoguxUndo
+  loguxProcessed,
+  loguxUndo
 } from './processing/index.js'
 export {
-  createZeroClean,
   ZeroCleanAction,
   ZeroAction,
-  createZero
+  zeroClean,
+  zero
 } from './zero-knowledge/index.js'
 export { defineAction, ActionCreator } from './define-action/index.js'
