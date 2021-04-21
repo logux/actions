@@ -1,25 +1,28 @@
 import { Action, AnyAction } from '@logux/core'
 
-type Fields = {
+interface Fields {
   [key: string]: any
 }
 
 export interface ActionCreator<
-  A extends Action,
-  F extends any[] = [Omit<A, 'type'>]
+  CreatedAction extends Action,
+  CreatorArgs extends any[] = [Omit<CreatedAction, 'type'>]
 > {
   type: string
-  match: (action: AnyAction) => action is A
-  (...args: F): A
+  match: (action: AnyAction) => action is CreatedAction
+  (...args: CreatorArgs): CreatedAction
 }
 
 interface DefineAction {
-  <A extends Action>(type: string): ActionCreator<A, [Omit<A, 'type'>]>
+  <CreatedAction extends Action>(type: string): ActionCreator<
+    CreatedAction,
+    [Omit<CreatedAction, 'type'>]
+  >
 
-  <A extends Action, P extends any[]>(
+  <CreatedAction extends Action, CreatorArgs extends any[]>(
     type: string,
-    creator: (...args: P) => A
-  ): ActionCreator<A, P>
+    creator: (...args: CreatorArgs) => CreatedAction
+  ): ActionCreator<CreatedAction, CreatorArgs>
 }
 
 export const defineAction: DefineAction

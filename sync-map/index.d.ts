@@ -2,59 +2,67 @@ import { ActionCreator } from '../define-action/index.js'
 
 export type SyncMapValue = string | number | boolean | undefined
 
-export type SyncMapValues = {
+export interface SyncMapValues {
   [key: string]: SyncMapValue | SyncMapValue[]
 }
 
-export type SyncMapCreateAction<V extends SyncMapValues = SyncMapValues> = {
+export interface SyncMapCreateAction<
+  Value extends SyncMapValues = SyncMapValues
+> {
   type: string
   id: string
-  fields: Omit<V, 'id'>
+  fields: Omit<Value, 'id'>
 }
 
-export type SyncMapCreatedAction<V extends SyncMapValues = SyncMapValues> = {
+export interface SyncMapCreatedAction<
+  Value extends SyncMapValues = SyncMapValues
+> {
   type: string
   id: string
-  fields: Omit<V, 'id'>
+  fields: Omit<Value, 'id'>
 }
 
-export type SyncMapChangeAction<V extends SyncMapValues = SyncMapValues> = {
+export interface SyncMapChangeAction<
+  Value extends SyncMapValues = SyncMapValues
+> {
   type: string
   id: string
-  fields: Partial<Omit<V, 'id'>>
+  fields: Partial<Omit<Value, 'id'>>
 }
 
-export type SyncMapChangedAction<V extends SyncMapValues = SyncMapValues> = {
+export interface SyncMapChangedAction<
+  Value extends SyncMapValues = SyncMapValues
+> {
   type: string
   id: string
-  fields: Partial<Omit<V, 'id'>>
+  fields: Partial<Omit<Value, 'id'>>
 }
 
-export type SyncMapDeleteAction = {
-  type: string
-  id: string
-}
-
-export type SyncMapDeletedAction = {
+export interface SyncMapDeleteAction {
   type: string
   id: string
 }
 
-export function defineCreatedSyncMap<V extends SyncMapValues>(
+export interface SyncMapDeletedAction {
+  type: string
+  id: string
+}
+
+export function defineCreatedSyncMap<Value extends SyncMapValues>(
   plural: string
-): ActionCreator<SyncMapCreatedAction<V>>
+): ActionCreator<SyncMapCreatedAction<Value>>
 
-export function defineCreateSyncMap<V extends SyncMapValues>(
+export function defineCreateSyncMap<Value extends SyncMapValues>(
   plural: string
-): ActionCreator<SyncMapCreateAction<V>>
+): ActionCreator<SyncMapCreateAction<Value>>
 
-export function defineChangedSyncMap<V extends SyncMapValues>(
+export function defineChangedSyncMap<Value extends SyncMapValues>(
   plural: string
-): ActionCreator<SyncMapChangedAction<V>>
+): ActionCreator<SyncMapChangedAction<Value>>
 
-export function defineChangeSyncMap<V extends SyncMapValues>(
+export function defineChangeSyncMap<Value extends SyncMapValues>(
   plural: string
-): ActionCreator<SyncMapChangeAction<V>>
+): ActionCreator<SyncMapChangeAction<Value>>
 
 export function defineDeletedSyncMap(
   plural: string
@@ -64,13 +72,13 @@ export function defineDeleteSyncMap(
   plural: string
 ): ActionCreator<SyncMapDeleteAction>
 
-export function defineSyncMapActions<V extends SyncMapValues>(
+export function defineSyncMapActions<Value extends SyncMapValues>(
   plural: string
 ): [
-  ActionCreator<SyncMapCreateAction<V>>,
-  ActionCreator<SyncMapChangeAction<V>>,
+  ActionCreator<SyncMapCreateAction<Value>>,
+  ActionCreator<SyncMapChangeAction<Value>>,
   ActionCreator<SyncMapDeleteAction>,
-  ActionCreator<SyncMapCreatedAction<V>>,
-  ActionCreator<SyncMapChangedAction<V>>,
+  ActionCreator<SyncMapCreatedAction<Value>>,
+  ActionCreator<SyncMapChangedAction<Value>>,
   ActionCreator<SyncMapDeletedAction>
 ]

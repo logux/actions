@@ -1,6 +1,6 @@
 import { ActionCreator } from '../define-action/index.js'
 
-export type LoguxSubscribeAction = {
+export interface LoguxSubscribeAction {
   type: 'logux/subscribe'
   channel: string
   creating?: true
@@ -13,12 +13,12 @@ export type LoguxSubscribeAction = {
   }
 }
 
-export type LoguxSubscribedAction = {
+export interface LoguxSubscribedAction {
   type: 'logux/subscribed'
   channel: string
 }
 
-export type LoguxUnsubscribeAction = {
+export interface LoguxUnsubscribeAction {
   type: 'logux/unsubscribe'
   channel: string
   filter?: {

@@ -2,27 +2,31 @@ import { Action, AnyAction } from '@logux/core'
 
 import { ActionCreator } from '../define-action/index.js'
 
-export type LoguxProcessedAction = {
+export interface LoguxProcessedAction {
   type: 'logux/processed'
   id: string
 }
 
-export type LoguxUndoAction<
-  A extends Action = AnyAction,
-  R extends string = string
-> = {
+export interface LoguxUndoAction<
+  RevertedAction extends Action = AnyAction,
+  Reason extends string = string
+> {
   type: 'logux/undo'
   id: string
-  reason: R
-  action: A
+  reason: Reason
+  action: RevertedAction
 }
 
 export const loguxProcessed: ActionCreator<LoguxProcessedAction>
 
 export function loguxUndo<
-  A extends Action = AnyAction,
-  R extends string = string
->(fields: { id: string; reason: R; action: A }): LoguxUndoAction<A, R>
+  RevertedAction extends Action = AnyAction,
+  Reason extends string = string
+>(fields: {
+  id: string
+  reason: Reason
+  action: RevertedAction
+}): LoguxUndoAction<RevertedAction, Reason>
 
 export namespace loguxUndo {
   export const type: 'logux/undo'
