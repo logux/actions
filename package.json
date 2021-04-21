@@ -18,17 +18,17 @@
   "types": "./index.d.ts",
   "type": "module",
   "engines": {
-    "node": "^12.0.0 || >=14.0.0"
+    "node": "^12.0.0 || ^14.0.0 || >=16.0.0"
   },
   "peerDependencies": {
     "@logux/core": "^0.6.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.15",
+    "@babel/core": "^7.13.16",
     "@logux/client": "logux/client#next",
     "@logux/core": "logux/core#next",
-    "@logux/eslint-config": "^45.2.2",
-    "@logux/sharec-config": "^0.9.0",
+    "@logux/eslint-config": "^45.2.3",
+    "@logux/sharec-config": "^0.10.1",
     "@logux/state": "logux/state",
     "@types/jest": "^26.0.22",
     "@types/ws": "^7.4.1",
@@ -44,7 +44,7 @@
     "eslint-plugin-prefer-let": "^1.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-unicorn": "^29.0.0",
+    "eslint-plugin-unicorn": "^30.0.0",
     "jest": "^27.0.0-next.2",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
@@ -124,6 +124,6 @@
   },
   "sharec": {
     "config": "@logux/sharec-config",
-    "version": "0.9.0"
+    "version": "0.10.1"
   }
 }
