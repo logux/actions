@@ -12,7 +12,8 @@ export interface AbstractActionCreator {
 export interface ActionCreator<
   CreatedAction extends Action,
   CreatorArgs extends any[] = [Omit<CreatedAction, 'type'>]
-> extends AbstractActionCreator {
+> {
+  type: string
   match: (action: AnyAction) => action is CreatedAction
   (...args: CreatorArgs): CreatedAction
 }
