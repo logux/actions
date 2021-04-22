@@ -524,11 +524,11 @@
 
 "@logux/actions@logux/actions":
   version "0.0.0"
-  resolved "https://codeload.github.com/logux/actions/tar.gz/3926be005f94d0a6c48684b710a0eb5e1aba5297"
+  resolved "https://codeload.github.com/logux/actions/tar.gz/2d23b1914a94c10d0ffbcca25dac5be0619cde8e"
 
 "@logux/client@logux/client#next":
   version "0.9.3"
-  resolved "https://codeload.github.com/logux/client/tar.gz/4cc9b74aec7829230c71c04e8d05044a47ce0640"
+  resolved "https://codeload.github.com/logux/client/tar.gz/77be31a3bafa76df45e7c81c1038aa8cf9fb6093"
   dependencies:
     "@logux/actions" logux/actions
     fast-json-stable-stringify "^2.1.0"
@@ -558,7 +558,7 @@
 
 "@logux/state@logux/state":
   version "0.0.0"
-  resolved "https://codeload.github.com/logux/state/tar.gz/c3e94ec1ad2f5a0281117fb2d935d22df3d96439"
+  resolved "https://codeload.github.com/logux/state/tar.gz/fd080e7a097c615090d197b59620a617cbec4ea7"
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
