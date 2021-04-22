@@ -4,11 +4,15 @@ interface Fields {
   [key: string]: any
 }
 
+export interface AbstractActionCreator {
+  (...args: any): Action
+  type: string
+}
+
 export interface ActionCreator<
   CreatedAction extends Action,
   CreatorArgs extends any[] = [Omit<CreatedAction, 'type'>]
-> {
-  type: string
+> extends AbstractActionCreator {
   match: (action: AnyAction) => action is CreatedAction
   (...args: CreatorArgs): CreatedAction
 }

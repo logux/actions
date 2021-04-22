@@ -35,4 +35,8 @@ export {
   zeroClean,
   zero
 } from './zero-knowledge/index.js'
-export { defineAction, ActionCreator } from './define-action/index.js'
+export {
+  AbstractActionCreator,
+  ActionCreator,
+  defineAction
+} from './define-action/index.js'
