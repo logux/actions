@@ -4,8 +4,8 @@ interface Fields {
   [key: string]: any
 }
 
-export interface AbstractActionCreator {
-  (...args: any): Action
+export interface AbstractActionCreator<CreatedAction extends Action = Action> {
+  (...args: any): CreatedAction
   type: string
 }
 
