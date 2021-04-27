@@ -1,6 +1,6 @@
 {
   "name": "@logux/actions",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Types and action creators for build-in Logux actions",
   "keywords": [
     "logux",
