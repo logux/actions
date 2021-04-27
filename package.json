@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@logux/client": "logux/client#next",
-    "@logux/core": "logux/core#next",
+    "@logux/core": "^0.7.0",
     "@logux/eslint-config": "^45.4.1",
     "@logux/sharec-config": "^0.10.1",
     "@logux/state": "logux/state",

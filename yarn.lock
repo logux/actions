@@ -536,11 +536,12 @@
     nanoevents "^5.1.13"
     nanoid "^3.1.22"
 
-"@logux/core@logux/core#next":
-  version "0.6.2"
-  resolved "https://codeload.github.com/logux/core/tar.gz/89c7d68269ce4c99bce015d5f05efaa11df134bf"
+"@logux/core@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@logux/core/-/core-0.7.0.tgz#b167e97127f2eb9b9faf37ca637ce929aa6e5f3e"
+  integrity sha512-vUpJ3KBlPoIqSpvNxf9hTUVT8zn1eNRAE8p4mbHbaOyNVEE9LQpYnBqxm6yQxcojhz/I/3NdeaBY0F2XbAwJsg==
   dependencies:
-    nanoevents "^5.1.13"
+    nanoevents "^6.0.0"
 
 "@logux/eslint-config@^45.4.1":
   version "45.4.1"
