@@ -1,4 +1,4 @@
-import { defineSyncMap } from '@logux/state'
+import { defineSyncMap } from '@logux/client'
 import { Action } from '@logux/core'
 
 import { defineCreateSyncMap } from '../index.js'
