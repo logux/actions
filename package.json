@@ -8,7 +8,7 @@
     "types"
   ],
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage && eslint . && check-dts && yaspeller *.md"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage && eslint . && check-dts && size-limit && yaspeller *.md"
   },
   "author": "Andrey Sitnik <andrey@sitnik.ru>",
   "license": "MIT",
@@ -34,6 +34,7 @@
     "@logux/eslint-config": "^45.4.3",
     "@logux/sharec-config": "^0.10.2",
     "@logux/state": "^0.1.0",
+    "@size-limit/preset-small-lib": "^4.10.2",
     "@types/jest": "^26.0.23",
     "@types/ws": "^7.4.4",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
@@ -54,6 +55,7 @@
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
     "simple-git-hooks": "^2.4.1",
+    "size-limit": "^4.10.2",
     "ts-jest": "^27.0.0-next.4",
     "typescript": "^4.2.4",
     "yaspeller": "^7.0.0"
@@ -114,6 +116,12 @@
   },
   "eslintIgnore": [
     "**/errors.ts"
+  ],
+  "size-limit": [
+    {
+      "import": "{ defineAction }",
+      "limit": "35 B"
+    }
   ],
   "yaspeller": {
     "lang": "en",
