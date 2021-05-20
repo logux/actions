@@ -40,3 +40,4 @@ export {
   ActionCreator,
   defineAction
 } from './define-action/index.js'
+export { LoguxNotFoundError } from './logux-not-found/index.js'
