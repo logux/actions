@@ -1,6 +1,6 @@
 import { ActionCreator } from '../define-action/index.js'
 
-export type SyncMapTypes = string | number | boolean | undefined
+export type SyncMapTypes = string | number | boolean | null | undefined
 
 export interface SyncMapValues {
   [key: string]: SyncMapTypes | SyncMapTypes[]
