@@ -7,7 +7,7 @@ type RenameAction = {
   name: string
 }
 
-// THROWS Argument of type '"other"' is not assignable to parameter of type '"rename"'
+// THROWS type '"other"' is not assignable to parameter of type '"rename"'
 let rename = defineAction<RenameAction>('other')
 
 function processAction(action: Action) {
