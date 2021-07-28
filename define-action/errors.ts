@@ -6,7 +6,9 @@ type RenameAction = {
   type: 'rename'
   name: string
 }
-let rename = defineAction<RenameAction>('rename')
+
+// THROWS Argument of type '"other"' is not assignable to parameter of type '"rename"'
+let rename = defineAction<RenameAction>('other')
 
 function processAction(action: Action) {
   if (rename.match(action)) {
@@ -18,3 +20,5 @@ function processAction(action: Action) {
 }
 
 processAction({ type: 'other' })
+
+let other = defineAction('rename')
