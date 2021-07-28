@@ -19,13 +19,13 @@ export interface ActionCreator<
 }
 
 interface DefineAction {
-  <CreatedAction extends Action>(type: string): ActionCreator<
+  <CreatedAction extends Action>(type: CreatedAction['type']): ActionCreator<
     CreatedAction,
     [Omit<CreatedAction, 'type'>]
   >
 
   <CreatedAction extends Action, CreatorArgs extends any[]>(
-    type: string,
+    type: CreatedAction['type'],
     creator: (...args: CreatorArgs) => CreatedAction
   ): ActionCreator<CreatedAction, CreatorArgs>
 }
