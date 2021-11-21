@@ -1,6 +1,11 @@
+import { test } from 'uvu'
+import { ok } from 'uvu/assert'
+
 import { LoguxNotFoundError } from '../index.js'
 
-it('is error', () => {
+test('is error', () => {
   let error = new LoguxNotFoundError()
-  expect(error.stack).toContain('LoguxNotFoundError')
+  ok(error.stack?.includes('LoguxNotFoundError'))
 })
+
+test.run()

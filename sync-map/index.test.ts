@@ -1,4 +1,6 @@
-import { defineSyncMap } from '@logux/client'
+import { syncMapTemplate } from '@logux/client'
+import { equal } from 'uvu/assert'
+import { test } from 'uvu'
 
 import {
   defineSyncMapActions,
@@ -13,68 +15,73 @@ import {
 type UserValue = {
   name: string
 }
-let User = defineSyncMap<UserValue>('users')
+let User = syncMapTemplate<UserValue>('users')
 
-it('creates created action', () => {
+test('creates created action', () => {
   let userCreated = defineCreatedSyncMap<UserValue>(User.plural)
-  expect(userCreated({ id: 'uuid', fields: { name: 'A' } })).toEqual({
+  equal(userCreated({ id: 'uuid', fields: { name: 'A' } }), {
     type: 'users/created',
     id: 'uuid',
     fields: { name: 'A' }
   })
 })
 
-it('creates changed action', () => {
+test('creates changed action', () => {
   let userChanged = defineChangedSyncMap<UserValue>(User.plural)
-  expect(userChanged({ id: 'uuid', fields: { name: 'A' } })).toEqual({
+  equal(userChanged({ id: 'uuid', fields: { name: 'A' } }), {
     type: 'users/changed',
     id: 'uuid',
     fields: { name: 'A' }
   })
 })
 
-it('creates deleted action', () => {
+test('creates deleted action', () => {
   let userDeleted = defineDeletedSyncMap(User.plural)
-  expect(userDeleted({ id: 'uuid' })).toEqual({
+  equal(userDeleted({ id: 'uuid' }), {
     type: 'users/deleted',
     id: 'uuid'
   })
 })
 
-it('creates create action', () => {
+test('creates create action', () => {
   let userCreate = defineCreateSyncMap<UserValue>(User.plural)
-  expect(userCreate({ id: 'uuid', fields: { name: 'A' } })).toEqual({
+  equal(userCreate({ id: 'uuid', fields: { name: 'A' } }), {
     type: 'users/create',
     id: 'uuid',
     fields: { name: 'A' }
   })
 })
 
-it('creates change action', () => {
+test('creates change action', () => {
   let userChange = defineChangeSyncMap<UserValue>(User.plural)
-  expect(userChange({ id: 'uuid', fields: { name: 'A' } })).toEqual({
+  equal(userChange({ id: 'uuid', fields: { name: 'A' } }), {
     type: 'users/change',
     id: 'uuid',
     fields: { name: 'A' }
   })
 })
 
-it('creates delete action', () => {
+test('creates delete action', () => {
   let userDelete = defineDeleteSyncMap(User.plural)
-  expect(userDelete({ id: 'uuid' })).toEqual({
+  equal(userDelete({ id: 'uuid' }), {
     type: 'users/delete',
     id: 'uuid'
   })
 })
 
-it('creates everything', () => {
+test('creates everything', () => {
   let actions = defineSyncMapActions<UserValue>(User.plural)
-  expect(actions.map(i => i.type)).toEqual([
-    'users/create',
-    'users/change',
-    'users/delete',
-    'users/created',
-    'users/changed',
-    'users/deleted'
-  ])
+  equal(
+    actions.map(i => i.type),
+    [
+      'users/create',
+      'users/change',
+      'users/delete',
+      'users/created',
+      'users/changed',
+      'users/deleted'
+    ]
+  )
 })
+
+test.run()

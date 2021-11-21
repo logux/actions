@@ -1,4 +1,4 @@
-import { defineSyncMap } from '@logux/client'
+import { syncMapTemplate } from '@logux/client'
 import { Action } from '@logux/core'
 
 import { defineCreateSyncMap } from '../index.js'
@@ -9,7 +9,7 @@ type UserValue = {
   role?: string
 }
 
-let User = defineSyncMap<UserValue>('users')
+let User = syncMapTemplate<UserValue>('users')
 
 let userCreate = defineCreateSyncMap<UserValue>(User.plural)
 
