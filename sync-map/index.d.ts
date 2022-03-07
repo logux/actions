@@ -72,6 +72,22 @@ export function defineDeleteSyncMap(
   plural: string
 ): ActionCreator<SyncMapDeleteAction>
 
+/**
+ * Returns actions for CRDT Map.
+ *
+ * ```js
+ * import { defineSyncMapActions } from '@logux/actions'
+ *
+ * const [
+ *   createUserAction,
+ *   changeUserAction,
+ *   deleteUserAction,
+ *   createdUserAction,
+ *   changedUserAction,
+ *   deletedUserAction
+ * ] = defineSyncMapActions('users')
+ * ```
+ */
 export function defineSyncMapActions<Value extends SyncMapValues>(
   plural: string
 ): [
