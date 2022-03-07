@@ -26,8 +26,17 @@ export interface LoguxUnsubscribeAction {
   }
 }
 
+/**
+ * Returns `logux/subscribe` action.
+ */
 export const loguxSubscribe: ActionCreator<LoguxSubscribeAction>
 
+/**
+ * Returns `logux/subscribed` action.
+ */
 export const loguxSubscribed: ActionCreator<LoguxSubscribedAction>
 
+/**
+ * Returns `logux/unsubscribe` action.
+ */
 export const loguxUnsubscribe: ActionCreator<LoguxSubscribeAction>

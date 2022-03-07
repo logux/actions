@@ -17,8 +17,14 @@ export interface LoguxUndoAction<
   action: RevertedAction
 }
 
+/**
+ * Returns `logux/processed` action.
+ */
 export const loguxProcessed: ActionCreator<LoguxProcessedAction>
 
+/**
+ * Returns `logux/undo` action.
+ */
 export function loguxUndo<
   RevertedAction extends Action = AnyAction,
   Reason extends string = string

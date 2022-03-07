@@ -11,6 +11,12 @@ export interface ZeroCleanAction {
   id: string
 }
 
+/**
+ * Returns `0` action.
+ */
 export const zero: ActionCreator<ZeroAction>
 
+/**
+ * Returns `0/clean` action.
+ */
 export const zeroClean: ActionCreator<ZeroCleanAction>
