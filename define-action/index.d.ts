@@ -10,7 +10,7 @@ export interface AbstractActionCreator<CreatedAction extends Action = Action> {
 }
 
 export interface ActionCreator<
-  CreatedAction extends Action,
+  CreatedAction extends Action = AnyAction,
   CreatorArgs extends any[] = [Omit<CreatedAction, 'type'>]
 > {
   type: string
