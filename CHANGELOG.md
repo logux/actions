@@ -1,6 +1,9 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.3
+* Dropped Node.js 12 support.
+
 ## 0.2.3
 * Fixed `ActionCreator` type.
 
