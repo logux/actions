@@ -26,11 +26,11 @@
     "node": "^14.0.0 || ^16.0.0 || >=18.0.0"
   },
   "peerDependencies": {
-    "@logux/core": "^0.7.0"
+    "@logux/core": "^0.8.0"
   },
   "devDependencies": {
     "@logux/client": "^0.17.0",
-    "@logux/core": "^0.7.3",
+    "@logux/core": "^0.8.0",
     "@logux/eslint-config": "^47.2.0",
     "@size-limit/preset-small-lib": "^8.0.1",
     "@types/ws": "^8.5.3",

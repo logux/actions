@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@logux/client': ^0.17.0
-  '@logux/core': ^0.7.3
+  '@logux/core': ^0.8.0
   '@logux/eslint-config': ^47.2.0
   '@size-limit/preset-small-lib': ^8.0.1
   '@types/ws': ^8.5.3
@@ -24,8 +24,8 @@ specifiers:
   uvu: ^0.5.6
 
 devDependencies:
-  '@logux/client': 0.17.0_cdjag4gur464gfepqcn54orpdu
-  '@logux/core': 0.7.3
+  '@logux/client': 0.17.0_gsvypqk4egb4s2awt355ad3she
+  '@logux/core': 0.8.0
   '@logux/eslint-config': 47.2.0_c5zrp42zbc5s4i6yiprz55kwaq
   '@size-limit/preset-small-lib': 8.0.1_size-limit@8.0.1
   '@types/ws': 8.5.3
@@ -132,16 +132,16 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@logux/actions/0.2.3_@logux+core@0.7.3:
+  /@logux/actions/0.2.3_@logux+core@0.8.0:
     resolution: {integrity: sha512-LITIzuRFYkss8dL+da8IkTrpPH/q/I9maT1Ip+sanMxIxNu3Ba7eYcxIin7lR/Fhsq1O8ngjzs/clsEgIaR/Og==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     peerDependencies:
       '@logux/core': ^0.7.0
     dependencies:
-      '@logux/core': 0.7.3
+      '@logux/core': 0.8.0
     dev: true
 
-  /@logux/client/0.17.0_cdjag4gur464gfepqcn54orpdu:
+  /@logux/client/0.17.0_gsvypqk4egb4s2awt355ad3she:
     resolution: {integrity: sha512-iBUyrdqS1QcvjK1Z6izJI4gLBYK4lz6QucEoFzQn+F9mPgRrRUbPrxIkCiMgvOxLykVkpT/WM4NWUuHKxczS5g==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -170,8 +170,8 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@logux/actions': 0.2.3_@logux+core@0.7.3
-      '@logux/core': 0.7.3
+      '@logux/actions': 0.2.3_@logux+core@0.8.0
+      '@logux/core': 0.8.0
       fast-json-stable-stringify: 2.1.0
       nanodelay: 2.0.2
       nanoevents: 7.0.1
@@ -179,11 +179,11 @@ packages:
       nanostores: 0.6.0
     dev: true
 
-  /@logux/core/0.7.3:
-    resolution: {integrity: sha512-IMqhl8hEK/Ej/URUcpeREW9hMuKdakVHPyy3k0GSwcC+PlYmtCRirp7+4b7v3EfDjB+evSw8CnQTiNwnfev0gQ==}
-    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+  /@logux/core/0.8.0:
+    resolution: {integrity: sha512-jhV0gqAl6Busqh6lZMSYcoFegrUr+rR8yCpFHUrdurtGxla75ryeZ0/8knmotLYuPhxprWuQ2s8mGZ9PxWmn4g==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     dependencies:
-      nanoevents: 6.0.2
+      nanoevents: 7.0.1
     dev: true
 
   /@logux/eslint-config/47.2.0_c5zrp42zbc5s4i6yiprz55kwaq:
@@ -1953,11 +1953,6 @@ packages:
 
   /nanodelay/2.0.2:
     resolution: {integrity: sha512-6AS5aCSXsjoxq2Jr9CdaAeT60yoYDOTp6po9ziqeOeY6vf6uTEHYSqWql6EFILrM3fEfXgkZ4KqE9L0rTm/wlA==}
-    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
-    dev: true
-
-  /nanoevents/6.0.2:
-    resolution: {integrity: sha512-FRS2otuFcPPYDPYViNWQ42+1iZqbXydinkRHTHFxrF4a1CpBfmydR9zkI44WSXAXCyPrkcGtPk5CnpW6Y3lFKQ==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: true
 
