@@ -29,26 +29,26 @@
     "@logux/core": "^0.7.0"
   },
   "devDependencies": {
-    "@logux/client": "^0.15.3",
+    "@logux/client": "^0.17.0",
     "@logux/core": "^0.7.3",
     "@logux/eslint-config": "^47.2.0",
-    "@size-limit/preset-small-lib": "^7.0.8",
+    "@size-limit/preset-small-lib": "^8.0.1",
     "@types/ws": "^8.5.3",
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
-    "c8": "^7.11.3",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "c8": "^7.12.0",
     "check-dts": "^0.6.7",
     "clean-publish": "^4.0.1",
-    "eslint": "^8.19.0",
+    "eslint": "^8.23.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-prefer-let": "^3.0.1",
-    "eslint-plugin-promise": "^6.0.0",
-    "nanostores": "^0.5.12",
-    "size-limit": "^7.0.8",
-    "tsm": "^2.2.1",
-    "typescript": "^4.7.4",
+    "eslint-plugin-promise": "^6.0.1",
+    "nanostores": "^0.6.0",
+    "size-limit": "^8.0.1",
+    "tsm": "^2.2.2",
+    "typescript": "^4.8.2",
     "uvu": "^0.5.6"
   },
   "prettier": {
@@ -91,7 +91,7 @@
   "size-limit": [
     {
       "import": "{ defineAction }",
-      "limit": "55 B"
+      "limit": "63 B"
     }
   ]
 }
