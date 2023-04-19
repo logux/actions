@@ -52,6 +52,7 @@ jobs:
       - name: Run unit tests
         run: pnpm unit
   old:
+    runs-on: ubuntu-latest
     name: Node.js 14 Quick
     steps:
       - name: Checkout the repository
