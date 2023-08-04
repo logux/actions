@@ -1,6 +1,9 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.3.1
+* Fixed project’s domain.
+
 ## 0.3
 * Dropped Node.js 12 support.
 
