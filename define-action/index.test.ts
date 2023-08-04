@@ -1,17 +1,17 @@
-import { equal, is } from 'uvu/assert'
 import { test } from 'uvu'
+import { equal, is } from 'uvu/assert'
 
 import { defineAction } from '../index.js'
 
 test('creates actions', () => {
   type RenameAction = {
-    type: 'rename'
     name: string
+    type: 'rename'
   }
   let rename = defineAction<RenameAction>('rename')
 
   let newName = rename({ name: 'newName' })
-  equal(newName, { type: 'rename', name: 'newName' })
+  equal(newName, { name: 'newName', type: 'rename' })
 
   is(rename.match(newName), true)
   is(rename.match({ type: 'another' }), false)
@@ -19,17 +19,17 @@ test('creates actions', () => {
 
 test('creates action by function', () => {
   type RenameAction = {
-    type: 'rename'
     id: number
     name: string
+    type: 'rename'
   }
   let rename = defineAction(
     'rename',
-    (id: number, name: string): RenameAction => ({ type: 'rename', id, name })
+    (id: number, name: string): RenameAction => ({ id, name, type: 'rename' })
   )
 
   let newName = rename(1, 'newName')
-  equal(newName, { type: 'rename', id: 1, name: 'newName' })
+  equal(newName, { id: 1, name: 'newName', type: 'rename' })
 })
 
 test.run()

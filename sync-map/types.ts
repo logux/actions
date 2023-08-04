@@ -1,12 +1,12 @@
 import { syncMapTemplate } from '@logux/client'
-import { Action } from '@logux/core'
+import type { Action } from '@logux/core'
 
 import { defineCreateSyncMap } from '../index.js'
 
 type UserValue = {
+  age: number
   id: string
   name: string
-  age: number
   role?: string
 }
 
@@ -21,5 +21,5 @@ function processAction(action: Action): void {
 }
 
 processAction(
-  userCreate({ id: 'uuid', fields: { name: 'John Smith', age: 30 } })
+  userCreate({ fields: { age: 30, name: 'John Smith' }, id: 'uuid' })
 )

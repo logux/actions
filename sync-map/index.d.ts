@@ -1,6 +1,6 @@
-import { ActionCreator } from '../define-action/index.js'
+import type { ActionCreator } from '../define-action/index.js'
 
-export type SyncMapTypes = string | number | boolean | null | undefined
+export type SyncMapTypes = boolean | null | number | string | undefined
 
 export interface SyncMapValues {
   [key: string]: SyncMapTypes | SyncMapTypes[]
@@ -9,43 +9,43 @@ export interface SyncMapValues {
 export interface SyncMapCreateAction<
   Value extends SyncMapValues = SyncMapValues
 > {
-  type: string
-  id: string
   fields: Omit<Value, 'id'>
+  id: string
+  type: string
 }
 
 export interface SyncMapCreatedAction<
   Value extends SyncMapValues = SyncMapValues
 > {
-  type: string
-  id: string
   fields: Omit<Value, 'id'>
+  id: string
+  type: string
 }
 
 export interface SyncMapChangeAction<
   Value extends SyncMapValues = SyncMapValues
 > {
-  type: string
-  id: string
   fields: Partial<Omit<Value, 'id'>>
+  id: string
+  type: string
 }
 
 export interface SyncMapChangedAction<
   Value extends SyncMapValues = SyncMapValues
 > {
-  type: string
-  id: string
   fields: Partial<Omit<Value, 'id'>>
+  id: string
+  type: string
 }
 
 export interface SyncMapDeleteAction {
-  type: string
   id: string
+  type: string
 }
 
 export interface SyncMapDeletedAction {
-  type: string
   id: string
+  type: string
 }
 
 export function defineCreatedSyncMap<Value extends SyncMapValues>(

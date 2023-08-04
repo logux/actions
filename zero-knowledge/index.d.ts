@@ -1,14 +1,14 @@
-import { ActionCreator } from '../define-action/index.js'
+import type { ActionCreator } from '../define-action/index.js'
 
 export interface ZeroAction {
-  type: '0'
   d: string
   iv: string
+  type: '0'
 }
 
 export interface ZeroCleanAction {
-  type: '0/clean'
   id: string
+  type: '0/clean'
 }
 
 /**

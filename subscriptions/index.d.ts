@@ -1,29 +1,29 @@
-import { ActionCreator } from '../define-action/index.js'
+import type { ActionCreator } from '../define-action/index.js'
 
 export interface LoguxSubscribeAction {
-  type: 'logux/subscribe'
   channel: string
   creating?: true
   filter?: {
-    [key: string]: string | number | boolean
+    [key: string]: boolean | number | string
   }
   since?: {
     id: string
     time: number
   }
+  type: 'logux/subscribe'
 }
 
 export interface LoguxSubscribedAction {
-  type: 'logux/subscribed'
   channel: string
+  type: 'logux/subscribed'
 }
 
 export interface LoguxUnsubscribeAction {
-  type: 'logux/unsubscribe'
   channel: string
   filter?: {
-    [key: string]: string | number | boolean
+    [key: string]: boolean | number | string
   }
+  type: 'logux/unsubscribe'
 }
 
 /**

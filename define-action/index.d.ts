@@ -1,4 +1,4 @@
-import { Action, AnyAction } from '@logux/core'
+import type { Action, AnyAction } from '@logux/core'
 
 interface Fields {
   [key: string]: any
@@ -13,8 +13,8 @@ export interface ActionCreator<
   CreatedAction extends Action = AnyAction,
   CreatorArgs extends any[] = [Omit<CreatedAction, 'type'>]
 > {
-  type: string
   match: (action: AnyAction) => action is CreatedAction
+  type: string
   (...args: CreatorArgs): CreatedAction
 }
 

@@ -1,20 +1,20 @@
-import { Action, AnyAction } from '@logux/core'
+import type { Action, AnyAction } from '@logux/core'
 
-import { ActionCreator } from '../define-action/index.js'
+import type { ActionCreator } from '../define-action/index.js'
 
 export interface LoguxProcessedAction {
-  type: 'logux/processed'
   id: string
+  type: 'logux/processed'
 }
 
 export interface LoguxUndoAction<
   RevertedAction extends Action = AnyAction,
   Reason extends string = string
 > {
-  type: 'logux/undo'
+  action: RevertedAction
   id: string
   reason: Reason
-  action: RevertedAction
+  type: 'logux/undo'
 }
 
 /**
@@ -29,9 +29,9 @@ export function loguxUndo<
   RevertedAction extends Action = AnyAction,
   Reason extends string = string
 >(fields: {
+  action: RevertedAction
   id: string
   reason: Reason
-  action: RevertedAction
 }): LoguxUndoAction<RevertedAction, Reason>
 
 export namespace loguxUndo {

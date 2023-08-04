@@ -1,10 +1,10 @@
-import { Action } from '@logux/core'
+import type { Action } from '@logux/core'
 
 import { defineAction } from '../index.js'
 
 type RenameAction = {
-  type: 'rename'
   name: string
+  type: 'rename'
 }
 let rename = defineAction<RenameAction>('rename')
 

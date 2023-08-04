@@ -1,15 +1,15 @@
 import { syncMapTemplate } from '@logux/client'
-import { equal } from 'uvu/assert'
 import { test } from 'uvu'
+import { equal } from 'uvu/assert'
 
 import {
-  defineSyncMapActions,
-  defineCreatedSyncMap,
   defineChangedSyncMap,
-  defineDeletedSyncMap,
-  defineCreateSyncMap,
   defineChangeSyncMap,
-  defineDeleteSyncMap
+  defineCreatedSyncMap,
+  defineCreateSyncMap,
+  defineDeletedSyncMap,
+  defineDeleteSyncMap,
+  defineSyncMapActions
 } from '../index.js'
 
 type UserValue = {
@@ -19,53 +19,53 @@ let User = syncMapTemplate<UserValue>('users')
 
 test('creates created action', () => {
   let userCreated = defineCreatedSyncMap<UserValue>(User.plural)
-  equal(userCreated({ id: 'uuid', fields: { name: 'A' } }), {
-    type: 'users/created',
+  equal(userCreated({ fields: { name: 'A' }, id: 'uuid' }), {
+    fields: { name: 'A' },
     id: 'uuid',
-    fields: { name: 'A' }
+    type: 'users/created'
   })
 })
 
 test('creates changed action', () => {
   let userChanged = defineChangedSyncMap<UserValue>(User.plural)
-  equal(userChanged({ id: 'uuid', fields: { name: 'A' } }), {
-    type: 'users/changed',
+  equal(userChanged({ fields: { name: 'A' }, id: 'uuid' }), {
+    fields: { name: 'A' },
     id: 'uuid',
-    fields: { name: 'A' }
+    type: 'users/changed'
   })
 })
 
 test('creates deleted action', () => {
   let userDeleted = defineDeletedSyncMap(User.plural)
   equal(userDeleted({ id: 'uuid' }), {
-    type: 'users/deleted',
-    id: 'uuid'
+    id: 'uuid',
+    type: 'users/deleted'
   })
 })
 
 test('creates create action', () => {
   let userCreate = defineCreateSyncMap<UserValue>(User.plural)
-  equal(userCreate({ id: 'uuid', fields: { name: 'A' } }), {
-    type: 'users/create',
+  equal(userCreate({ fields: { name: 'A' }, id: 'uuid' }), {
+    fields: { name: 'A' },
     id: 'uuid',
-    fields: { name: 'A' }
+    type: 'users/create'
   })
 })
 
 test('creates change action', () => {
   let userChange = defineChangeSyncMap<UserValue>(User.plural)
-  equal(userChange({ id: 'uuid', fields: { name: 'A' } }), {
-    type: 'users/change',
+  equal(userChange({ fields: { name: 'A' }, id: 'uuid' }), {
+    fields: { name: 'A' },
     id: 'uuid',
-    fields: { name: 'A' }
+    type: 'users/change'
   })
 })
 
 test('creates delete action', () => {
   let userDelete = defineDeleteSyncMap(User.plural)
   equal(userDelete({ id: 'uuid' }), {
-    type: 'users/delete',
-    id: 'uuid'
+    id: 'uuid',
+    type: 'users/delete'
   })
 })
 
