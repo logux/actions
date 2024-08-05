@@ -1,5 +1,5 @@
-import { test } from 'uvu'
-import { equal, is } from 'uvu/assert'
+import { deepStrictEqual, equal } from 'node:assert'
+import { test } from 'node:test'
 
 import { defineAction } from '../index.js'
 
@@ -11,10 +11,10 @@ test('creates actions', () => {
   let rename = defineAction<RenameAction>('rename')
 
   let newName = rename({ name: 'newName' })
-  equal(newName, { name: 'newName', type: 'rename' })
+  deepStrictEqual(newName, { name: 'newName', type: 'rename' })
 
-  is(rename.match(newName), true)
-  is(rename.match({ type: 'another' }), false)
+  equal(rename.match(newName), true)
+  equal(rename.match({ type: 'another' }), false)
 })
 
 test('creates action by function', () => {
@@ -29,7 +29,5 @@ test('creates action by function', () => {
   )
 
   let newName = rename(1, 'newName')
-  equal(newName, { id: 1, name: 'newName', type: 'rename' })
+  deepStrictEqual(newName, { id: 1, name: 'newName', type: 'rename' })
 })
-
-test.run()

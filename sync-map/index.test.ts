@@ -1,6 +1,6 @@
 import { syncMapTemplate } from '@logux/client'
-import { test } from 'uvu'
-import { equal } from 'uvu/assert'
+import { deepStrictEqual } from 'node:assert'
+import { test } from 'node:test'
 
 import {
   defineChangedSyncMap,
@@ -19,7 +19,7 @@ let User = syncMapTemplate<UserValue>('users')
 
 test('creates created action', () => {
   let userCreated = defineCreatedSyncMap<UserValue>(User.plural)
-  equal(userCreated({ fields: { name: 'A' }, id: 'uuid' }), {
+  deepStrictEqual(userCreated({ fields: { name: 'A' }, id: 'uuid' }), {
     fields: { name: 'A' },
     id: 'uuid',
     type: 'users/created'
@@ -28,7 +28,7 @@ test('creates created action', () => {
 
 test('creates changed action', () => {
   let userChanged = defineChangedSyncMap<UserValue>(User.plural)
-  equal(userChanged({ fields: { name: 'A' }, id: 'uuid' }), {
+  deepStrictEqual(userChanged({ fields: { name: 'A' }, id: 'uuid' }), {
     fields: { name: 'A' },
     id: 'uuid',
     type: 'users/changed'
@@ -37,7 +37,7 @@ test('creates changed action', () => {
 
 test('creates deleted action', () => {
   let userDeleted = defineDeletedSyncMap(User.plural)
-  equal(userDeleted({ id: 'uuid' }), {
+  deepStrictEqual(userDeleted({ id: 'uuid' }), {
     id: 'uuid',
     type: 'users/deleted'
   })
@@ -45,7 +45,7 @@ test('creates deleted action', () => {
 
 test('creates create action', () => {
   let userCreate = defineCreateSyncMap<UserValue>(User.plural)
-  equal(userCreate({ fields: { name: 'A' }, id: 'uuid' }), {
+  deepStrictEqual(userCreate({ fields: { name: 'A' }, id: 'uuid' }), {
     fields: { name: 'A' },
     id: 'uuid',
     type: 'users/create'
@@ -54,7 +54,7 @@ test('creates create action', () => {
 
 test('creates change action', () => {
   let userChange = defineChangeSyncMap<UserValue>(User.plural)
-  equal(userChange({ fields: { name: 'A' }, id: 'uuid' }), {
+  deepStrictEqual(userChange({ fields: { name: 'A' }, id: 'uuid' }), {
     fields: { name: 'A' },
     id: 'uuid',
     type: 'users/change'
@@ -63,7 +63,7 @@ test('creates change action', () => {
 
 test('creates delete action', () => {
   let userDelete = defineDeleteSyncMap(User.plural)
-  equal(userDelete({ id: 'uuid' }), {
+  deepStrictEqual(userDelete({ id: 'uuid' }), {
     id: 'uuid',
     type: 'users/delete'
   })
@@ -71,7 +71,7 @@ test('creates delete action', () => {
 
 test('creates everything', () => {
   let actions = defineSyncMapActions<UserValue>(User.plural)
-  equal(
+  deepStrictEqual(
     actions.map(i => i.type),
     [
       'users/create',
@@ -83,5 +83,3 @@ test('creates everything', () => {
     ]
   )
 })
-
-test.run()
