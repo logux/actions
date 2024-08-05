@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@logux/client':
         specifier: ^0.20.1
-        version: 0.20.1(@logux/core@0.8.5)(nanostores@0.9.5)
+        version: 0.20.1(@logux/core@0.8.5)(nanostores@0.11.2)
       '@logux/core':
         specifier: ^0.8.5
         version: 0.8.5
@@ -60,8 +60,8 @@ importers:
         specifier: ^6.6.0
         version: 6.6.0(eslint@8.57.0)
       nanostores:
-        specifier: ^0.9.5
-        version: 0.9.5
+        specifier: ^0.11.2
+        version: 0.11.2
       size-limit:
         specifier: ^11.1.4
         version: 11.1.4
@@ -1370,9 +1370,9 @@ packages:
   nanospinner@1.1.0:
     resolution: {integrity: sha512-yFvNYMig4AthKYfHFl1sLj7B2nkHL4lzdig4osvl9/LdGbXwrdFRoqBS98gsEsOakr0yH+r5NZ/1Y9gdVB8trA==}
 
-  nanostores@0.9.5:
-    resolution: {integrity: sha512-Z+p+g8E7yzaWwOe5gEUB2Ox0rCEeXWYIZWmYvw/ajNYX8DlXdMvMDj8DWfM/subqPAcsf8l8Td4iAwO1DeIIRQ==}
-    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+  nanostores@0.11.2:
+    resolution: {integrity: sha512-6bucNxMJA5rNV554WQl+MWGng0QVMzlRgpKTHHfIbVLrhQ+yRXBychV9ECGVuuUfCMQPjfIG9bj8oJFZ9hYP/Q==}
+    engines: {node: ^18.0.0 || >=20.0.0}
 
   natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
@@ -1897,7 +1897,7 @@ snapshots:
     dependencies:
       '@logux/core': 0.8.5
 
-  '@logux/client@0.20.1(@logux/core@0.8.5)(nanostores@0.9.5)':
+  '@logux/client@0.20.1(@logux/core@0.8.5)(nanostores@0.11.2)':
     dependencies:
       '@logux/actions': 0.3.1(@logux/core@0.8.5)
       '@logux/core': 0.8.5
@@ -1905,7 +1905,7 @@ snapshots:
       nanodelay: 2.0.2
       nanoevents: 8.0.0
       nanoid: 4.0.2
-      nanostores: 0.9.5
+      nanostores: 0.11.2
 
   '@logux/core@0.8.5':
     dependencies:
@@ -3090,7 +3090,7 @@ snapshots:
     dependencies:
       picocolors: 1.0.1
 
-  nanostores@0.9.5: {}
+  nanostores@0.11.2: {}
 
   natural-compare-lite@1.4.0: {}
 
