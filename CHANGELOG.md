@@ -1,6 +1,9 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.4.0
+* Moved to Logux Core 0.9.
+
 ## 0.3.1
 * Fixed project’s domain.
 
