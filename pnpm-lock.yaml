@@ -10,10 +10,10 @@ importers:
     devDependencies:
       '@logux/client':
         specifier: ^0.20.1
-        version: 0.20.1(@logux/core@0.8.5)(nanostores@0.11.2)
+        version: 0.20.1(@logux/core@0.9.0)(nanostores@0.11.2)
       '@logux/core':
-        specifier: ^0.8.5
-        version: 0.8.5
+        specifier: ^0.9.0
+        version: 0.9.0
       '@logux/eslint-config':
         specifier: ^53.3.0
         version: 53.3.0(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(typescript@5.5.4)
@@ -287,9 +287,9 @@ packages:
       vue:
         optional: true
 
-  '@logux/core@0.8.5':
-    resolution: {integrity: sha512-KHNcr1hyaPiU4k407CXegyGz945Imwrelz6XnZpbpFdUvC8PaA43fZiIoZ4y2x8Cwfh8gzWUjFP9JiKXlO2yrA==}
-    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+  '@logux/core@0.9.0':
+    resolution: {integrity: sha512-UJjfEHZkDLlbgBJF6Z/KRu7L0ZbgxBVf2vFGjQe6rwZpC39aef+qJGPVkov8bJijCgQTsEF1kcd94wHseQMkaA==}
+    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
 
   '@logux/eslint-config@53.3.0':
     resolution: {integrity: sha512-OiRQsYSYwySQ1kicBceilFi3Kg9EQYuDqQGw0QkyPg8AHbreA0xSC4NMkUin79w8A7Skzttw4yCjQua8BftbJw==}
@@ -751,8 +751,8 @@ packages:
     resolution: {integrity: sha512-X4ep5PMO1320HKaNC9DM5+p6XvOhwv+RcqGjhv3aiw9iAtHhiFtdIUB5l0Zya0iM22ys2BGKzrNI9Xpw/ZHooQ==}
     engines: {node: '>=0.10.0'}
 
-  eslint-plugin-promise@7.0.0:
-    resolution: {integrity: sha512-wb1ECT+b90ndBdAujhIdAU8oQ3Vt5gKqP/t78KOmg0ifynrvc2jGR9f6ndbOVNFpKf6jLUBlBBDF3H3Wk0JICg==}
+  eslint-plugin-promise@7.1.0:
+    resolution: {integrity: sha512-8trNmPxdAy3W620WKDpaS65NlM5yAumod6XeC4LOb+jxlkG4IVcp68c6dXY2ev+uT4U1PtG57YDV6EGAXN0GbQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -1137,13 +1137,13 @@ packages:
     resolution: {integrity: sha512-6AS5aCSXsjoxq2Jr9CdaAeT60yoYDOTp6po9ziqeOeY6vf6uTEHYSqWql6EFILrM3fEfXgkZ4KqE9L0rTm/wlA==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  nanoevents@7.0.1:
-    resolution: {integrity: sha512-o6lpKiCxLeijK4hgsqfR6CNToPyRU3keKyyI6uwuHRvpRTbZ0wXw51WRgyldVugZqoJfkGFrjrIenYH3bfEO3Q==}
-    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
-
   nanoevents@8.0.0:
     resolution: {integrity: sha512-bYYwNCdNc5ea6/Lwh1uioU1/7aaKa3EPmNQ2weTm8PWSpbWrsaWHePe0Zq4SF+D3F3JX3cn+QdktOPCf1meOqw==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+
+  nanoevents@9.0.0:
+    resolution: {integrity: sha512-X8pU7IOpgKXVLPxYUI55ymXc8XuBE+uypfEyEFBtHkD1EX9KavYTVc+vXZHFyHKzA1TaZoVDqklLdQBBrxIuAw==}
+    engines: {node: ^18.0.0 || >=20.0.0}
 
   nanoid@4.0.2:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
@@ -1653,34 +1653,34 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@logux/actions@0.3.1(@logux/core@0.8.5)':
+  '@logux/actions@0.3.1(@logux/core@0.9.0)':
     dependencies:
-      '@logux/core': 0.8.5
+      '@logux/core': 0.9.0
 
-  '@logux/client@0.20.1(@logux/core@0.8.5)(nanostores@0.11.2)':
+  '@logux/client@0.20.1(@logux/core@0.9.0)(nanostores@0.11.2)':
     dependencies:
-      '@logux/actions': 0.3.1(@logux/core@0.8.5)
-      '@logux/core': 0.8.5
+      '@logux/actions': 0.3.1(@logux/core@0.9.0)
+      '@logux/core': 0.9.0
       fast-json-stable-stringify: 2.1.0
       nanodelay: 2.0.2
       nanoevents: 8.0.0
       nanoid: 4.0.2
       nanostores: 0.11.2
 
-  '@logux/core@0.8.5':
+  '@logux/core@0.9.0':
     dependencies:
-      nanoevents: 7.0.1
+      nanoevents: 9.0.0
 
   '@logux/eslint-config@53.3.0(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)(typescript@5.5.4)':
     dependencies:
       '@eslint/eslintrc': 3.1.0
       eslint: 9.8.0
-      eslint-config-standard: 17.1.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0))(eslint-plugin-n@17.10.2(eslint@9.8.0))(eslint-plugin-promise@7.0.0(eslint@9.8.0))(eslint@9.8.0)
+      eslint-config-standard: 17.1.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0))(eslint-plugin-n@17.10.2(eslint@9.8.0))(eslint-plugin-promise@7.1.0(eslint@9.8.0))(eslint@9.8.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)
       eslint-plugin-n: 17.10.2(eslint@9.8.0)
       eslint-plugin-perfectionist: 3.1.2(eslint@9.8.0)(typescript@5.5.4)
       eslint-plugin-prefer-let: 4.0.0
-      eslint-plugin-promise: 7.0.0(eslint@9.8.0)
+      eslint-plugin-promise: 7.1.0(eslint@9.8.0)
       typescript-eslint: 8.0.1(eslint@9.8.0)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
@@ -2172,12 +2172,12 @@ snapshots:
       eslint: 9.8.0
       semver: 7.6.3
 
-  eslint-config-standard@17.1.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0))(eslint-plugin-n@17.10.2(eslint@9.8.0))(eslint-plugin-promise@7.0.0(eslint@9.8.0))(eslint@9.8.0):
+  eslint-config-standard@17.1.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0))(eslint-plugin-n@17.10.2(eslint@9.8.0))(eslint-plugin-promise@7.1.0(eslint@9.8.0))(eslint@9.8.0):
     dependencies:
       eslint: 9.8.0
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@8.0.1(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0)
       eslint-plugin-n: 17.10.2(eslint@9.8.0)
-      eslint-plugin-promise: 7.0.0(eslint@9.8.0)
+      eslint-plugin-promise: 7.1.0(eslint@9.8.0)
 
   eslint-import-resolver-node@0.3.9:
     dependencies:
@@ -2258,7 +2258,7 @@ snapshots:
     dependencies:
       requireindex: 1.2.0
 
-  eslint-plugin-promise@7.0.0(eslint@9.8.0):
+  eslint-plugin-promise@7.1.0(eslint@9.8.0):
     dependencies:
       eslint: 9.8.0
 
@@ -2664,9 +2664,9 @@ snapshots:
 
   nanodelay@2.0.2: {}
 
-  nanoevents@7.0.1: {}
-
   nanoevents@8.0.0: {}
+
+  nanoevents@9.0.0: {}
 
   nanoid@4.0.2: {}
 
