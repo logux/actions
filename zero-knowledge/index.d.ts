@@ -4,6 +4,7 @@ export interface ZeroAction {
   d: string
   iv: string
   type: '0'
+  z: boolean
 }
 
 export interface ZeroCleanAction {
