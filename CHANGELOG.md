@@ -1,6 +1,11 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.5.0
+* Added types for compressed E2EE actions.
+* Moved to Logux Core 0.10.
+* Removed Node.js 18 support.
+
 ## 0.4.0
 * Moved to Logux Core 0.9.
 
