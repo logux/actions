@@ -1,8 +1,8 @@
 import type { ActionCreator } from '../define-action/index.js'
 
 export interface ZeroAction {
-  d: string
-  iv: string
+  d: Uint8Array
+  iv: Uint8Array
   type: '0'
   z: boolean
 }
