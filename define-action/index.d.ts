@@ -1,17 +1,17 @@
 import type { Action, AnyAction } from '@logux/core'
 
 interface Fields {
-  [key: string]: any
+  [key: string]: unknown
 }
 
 export interface AbstractActionCreator<CreatedAction extends Action = Action> {
-  (...args: any): CreatedAction
+  (...args: unknown[]): CreatedAction
   type: string
 }
 
 export interface ActionCreator<
   CreatedAction extends Action = AnyAction,
-  CreatorArgs extends any[] = [Omit<CreatedAction, 'type'>]
+  CreatorArgs extends unknown[] = [Omit<CreatedAction, 'type'>]
 > {
   match: (action: AnyAction) => action is CreatedAction
   type: string
@@ -36,12 +36,11 @@ export interface ActionCreator<
  * @returns Function which return an action.
  */
 interface DefineAction {
-  <CreatedAction extends Action>(type: CreatedAction['type']): ActionCreator<
-    CreatedAction,
-    [Omit<CreatedAction, 'type'>]
-  >
+  <CreatedAction extends Action>(
+    type: CreatedAction['type']
+  ): ActionCreator<CreatedAction, [Omit<CreatedAction, 'type'>]>
 
-  <CreatedAction extends Action, CreatorArgs extends any[]>(
+  <CreatedAction extends Action, CreatorArgs extends unknown[]>(
     type: CreatedAction['type'],
     creator?: (...args: CreatorArgs) => CreatedAction
   ): ActionCreator<CreatedAction, CreatorArgs>
