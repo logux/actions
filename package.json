@@ -19,7 +19,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "test:coverage": "c8 bnt",
+    "test:coverage": "bnt --coverage 100",
     "test:lint": "oxlint",
     "test:types": "check-dts",
     "test:size": "size-limit",
@@ -33,7 +33,6 @@
     "@types/ws": "^8.18.1",
     "actions-up": "^1.13.0",
     "better-node-test": "^0.8.4",
-    "c8": "^11.0.0",
     "check-dts": "^1.0.0",
     "clean-publish": "^6.0.5",
     "eslint-plugin-prefer-let": "^4.2.2",
@@ -53,19 +52,6 @@
       "limit": "51 B"
     }
   ],
-  "c8": {
-    "check-coverage": true,
-    "clean": true,
-    "exclude": [
-      "**/*.test.*"
-    ],
-    "lines": 100,
-    "reporter": [
-      "text",
-      "lcov"
-    ],
-    "skip-full": true
-  },
   "engines": {
     "node": "^22.0.0 || >=24.0.0"
   }
