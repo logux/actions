@@ -26,8 +26,8 @@
     "test": "pnpm run /^test:/"
   },
   "devDependencies": {
-    "@logux/client": "^0.23.2",
-    "@logux/core": "^0.10.0",
+    "@logux/client": "github:logux/client#next",
+    "@logux/core": "github:logux/core#next",
     "@logux/oxc-configs": "^1.0.0",
     "@size-limit/preset-small-lib": "^12.1.0",
     "@types/ws": "^8.18.1",

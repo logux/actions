@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@logux/client':
-        specifier: ^0.23.2
-        version: 0.23.2(nanostores@1.4.1)
+        specifier: github:logux/client#next
+        version: git+ssh://git@github.com/logux/client.git#efce6efdaddeea41435dadc05183e448cafa9344(nanostores@1.4.1)
       '@logux/core':
-        specifier: ^0.10.0
-        version: 0.10.0
+        specifier: github:logux/core#next
+        version: git+ssh://git@github.com/logux/core.git#a18927bd8cece5459f88ed80549824454936a63a
       '@logux/oxc-configs':
         specifier: ^1.0.0
         version: 1.0.0(oxlint-tsgolint@7.0.2001)(oxlint@1.75.0(oxlint-tsgolint@7.0.2001))(typescript@7.0.2)
@@ -209,18 +209,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@logux/actions@0.5.0':
-    resolution: {integrity: sha512-65sgfkuFUzxHqDWSBn2CfNwHrijkoMbFS/LBMeRNtcdMxGRJ4X4mwwwDDdQ/Tci+TNQnfJTAiKCKBIsdiS3VCg==}
-    engines: {node: ^20.0.0 || >=22.0.0}
-    peerDependencies:
-      '@logux/core': ^0.10.0
-
-  '@logux/client@0.23.2':
-    resolution: {integrity: sha512-cqDegrUH+u7WlHUa7bnq7+0UwPLlNgy+YprruO0d3uG/oO6vfkGyWUZerQt7htaKOah2Hl0vqJgvvZljNfL98w==}
-    engines: {node: ^20.0.0 || >=22.0.0}
+  '@logux/client@git+ssh://git@github.com/logux/client.git#efce6efdaddeea41435dadc05183e448cafa9344':
+    resolution: {commit: efce6efdaddeea41435dadc05183e448cafa9344, repo: git@github.com:logux/client.git, type: git}
+    version: 0.23.2
+    engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
     peerDependencies:
       '@nanostores/preact': '>=0.0.0'
       '@nanostores/react': '>=0.0.0'
+      '@nanostores/sql': '>=0.0.0'
       '@nanostores/vue': '>=0.0.0'
       nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^1.0.0
       preact: '>=10.0.0'
@@ -231,6 +227,8 @@ packages:
       '@nanostores/preact':
         optional: true
       '@nanostores/react':
+        optional: true
+      '@nanostores/sql':
         optional: true
       '@nanostores/vue':
         optional: true
@@ -243,9 +241,10 @@ packages:
       vue:
         optional: true
 
-  '@logux/core@0.10.0':
-    resolution: {integrity: sha512-VbgVkEloAe2ym5w0cjyRI16Eeyk2R0BgJa9pMYT1FcJEhFnzrB23E0ExIEhrok0iD48bFh7goledwmDLmgWaiw==}
-    engines: {node: ^20.0.0 || >=22.0.0}
+  '@logux/core@git+ssh://git@github.com/logux/core.git#a18927bd8cece5459f88ed80549824454936a63a':
+    resolution: {commit: a18927bd8cece5459f88ed80549824454936a63a, repo: git@github.com:logux/core.git, type: git}
+    version: 0.10.0
+    engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
 
   '@logux/oxc-configs@1.0.0':
     resolution: {integrity: sha512-BHn8L2r2HT/Kp508jiTX+gTC3Rij2Sua7rjLOjweNzkWkQjzAbJdXwtRYI4DeBkrvdF7PmI8A6EvcCqHtDFNEQ==}
@@ -592,9 +591,6 @@ packages:
     resolution: {integrity: sha512-FkCmQwZtc4nf6EKDKEYW/lWtApDXxsJA/VXWQQemLhIWWho676CJdgt53AMubOrSOTzzep0dBMP9zVFCCCdxsw==}
     engines: {node: '>=0.10.0'}
 
-  fast-json-stable-stringify@2.1.0:
-    resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
-
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
@@ -612,17 +608,18 @@ packages:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
     engines: {node: '>=14'}
 
-  nanodelay@2.0.2:
-    resolution: {integrity: sha512-6AS5aCSXsjoxq2Jr9CdaAeT60yoYDOTp6po9ziqeOeY6vf6uTEHYSqWql6EFILrM3fEfXgkZ4KqE9L0rTm/wlA==}
-    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
-
-  nanoevents@9.1.0:
-    resolution: {integrity: sha512-Jd0fILWG44a9luj8v5kED4WI+zfkkgwKyRQKItTtlPfEsh7Lznfi1kr8/iZ+XAIss4Qq5GqRB0qtWbaz9ceO/A==}
-    engines: {node: ^18.0.0 || >=20.0.0}
+  nanoevents@10.0.0:
+    resolution: {integrity: sha512-PmIJ3BNxOzgVgnS1r/Pvyj6eZx/xUV2JCPogh0brD6smDIwjRlr1KBl9yoRX323PlfaNrBDDnfCgC9SL00OjSg==}
+    engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
 
   nanoid@5.1.16:
     resolution: {integrity: sha512-kVrnsrJqMR8+oLJnGEmSWw9BivK5mt7H3FZatVRjrc5wGqFYuBxX1yG7+A7Gi5AefkX6t/oCkizcQgpu0cY1dQ==}
     engines: {node: ^18 || >=20}
+    hasBin: true
+
+  nanoid@6.0.0:
+    resolution: {integrity: sha512-mkUH+rPkwU2qPadJ0oJZOjeZ5Mxn8Q1UhevwkTRWNuUZzyia3h4rhzK39hxaHTk0o2OxB8W2SQ6A8k23ZDi1pQ==}
+    engines: {node: ^22 || ^24 || >=26}
     hasBin: true
 
   nanospinner@1.2.2:
@@ -776,23 +773,17 @@ snapshots:
   '@esbuild/win32-x64@0.28.1':
     optional: true
 
-  '@logux/actions@0.5.0(@logux/core@0.10.0)':
+  '@logux/client@git+ssh://git@github.com/logux/client.git#efce6efdaddeea41435dadc05183e448cafa9344(nanostores@1.4.1)':
     dependencies:
-      '@logux/core': 0.10.0
-
-  '@logux/client@0.23.2(nanostores@1.4.1)':
-    dependencies:
-      '@logux/actions': 0.5.0(@logux/core@0.10.0)
-      '@logux/core': 0.10.0
-      fast-json-stable-stringify: 2.1.0
-      nanodelay: 2.0.2
-      nanoevents: 9.1.0
-      nanoid: 5.1.16
+      '@logux/actions': '@logux/core@git+ssh://git@github.com/logux/core.git#a18927bd8cece5459f88ed80549824454936a63a'
+      '@logux/core': git+ssh://git@github.com/logux/core.git#a18927bd8cece5459f88ed80549824454936a63a
+      nanoevents: 10.0.0
+      nanoid: 6.0.0
       nanostores: 1.4.1
 
-  '@logux/core@0.10.0':
+  '@logux/core@git+ssh://git@github.com/logux/core.git#a18927bd8cece5459f88ed80549824454936a63a':
     dependencies:
-      nanoevents: 9.1.0
+      nanoevents: 10.0.0
 
   '@logux/oxc-configs@1.0.0(oxlint-tsgolint@7.0.2001)(oxlint@1.75.0(oxlint-tsgolint@7.0.2001))(typescript@7.0.2)':
     dependencies:
@@ -1020,8 +1011,6 @@ snapshots:
     dependencies:
       requireindex: 1.2.0
 
-  fast-json-stable-stringify@2.1.0: {}
-
   fdir@6.5.0(picomatch@4.0.5):
     optionalDependencies:
       picomatch: 4.0.5
@@ -1031,11 +1020,11 @@ snapshots:
 
   lilconfig@3.1.3: {}
 
-  nanodelay@2.0.2: {}
-
-  nanoevents@9.1.0: {}
+  nanoevents@10.0.0: {}
 
   nanoid@5.1.16: {}
+
+  nanoid@6.0.0: {}
 
   nanospinner@1.2.2:
     dependencies:
