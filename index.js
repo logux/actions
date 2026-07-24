@@ -1,3 +1,9 @@
+export {
+  defineChangedCrdtTable,
+  defineCreatedCrdtTable,
+  defineCrdtTableActions,
+  defineDeletedCrdtTable
+} from './crdt-table/index.js'
 export { defineAction } from './define-action/index.js'
 export { LoguxNotFoundError } from './logux-not-found/index.js'
 export { loguxProcessed, loguxUndo } from './processing/index.js'
