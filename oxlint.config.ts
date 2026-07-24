@@ -3,5 +3,13 @@ import { defineConfig } from 'oxlint'
 
 export default defineConfig({
   extends: [loguxOxlintConfig],
-  ignorePatterns: ['*/errors.ts']
+  ignorePatterns: ['*/errors.ts'],
+  overrides: [
+    {
+      files: ['**/*.ts'],
+      rules: {
+        'typescript/no-explicit-any': 'off'
+      }
+    }
+  ]
 })

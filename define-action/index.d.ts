@@ -5,7 +5,7 @@ interface Fields {
 }
 
 export interface AbstractActionCreator<CreatedAction extends Action = Action> {
-  (...args: unknown[]): CreatedAction
+  (...args: any[]): CreatedAction
   type: string
 }
 
