@@ -36,5 +36,5 @@ export function loguxUndo<
 
 export namespace loguxUndo {
   export const type: 'logux/undo'
-  export function match(action: AnyAction): action is LoguxUndoAction
+  export function match(action: Action): action is LoguxUndoAction
 }

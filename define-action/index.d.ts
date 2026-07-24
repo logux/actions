@@ -13,7 +13,7 @@ export interface ActionCreator<
   CreatedAction extends Action = AnyAction,
   CreatorArgs extends unknown[] = [Omit<CreatedAction, 'type'>]
 > {
-  match: (action: AnyAction) => action is CreatedAction
+  match: (action: Action) => action is CreatedAction
   type: string
   (...args: CreatorArgs): CreatedAction
 }
