@@ -4,7 +4,7 @@ export interface ZeroAction {
   d: Uint8Array
   iv: Uint8Array
   type: '0'
-  z: boolean
+  compressed: boolean
 }
 
 export interface ZeroCleanAction {
