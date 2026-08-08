@@ -9,22 +9,35 @@ export interface CrdtTable<
   update(id: string, diff: Partial<RowFields>): Promise<void>
 }
 
-export interface CrdtTableCreatedAction<Fields extends object = object> {
-  fields: Fields
-  id: string
-  type: string
-}
+export type CrdtTableCreatedAction<Fields extends object = object> =
+  | {
+      fields: Fields
+      id: string
+      type: string
+    }
+  | { records: (Fields & { id: string })[]; type: string }
 
-export interface CrdtTableChangedAction<Fields extends object = object> {
-  fields: Partial<Fields>
-  id: string
-  type: string
-}
+export type CrdtTableChangedAction<Fields extends object = object> =
+  | {
+      fields: Partial<Fields>
+      id: string
+      type: string
+    }
+  | {
+      fields: Partial<Fields>
+      ids: string[]
+      type: string
+    }
 
-export interface CrdtTableDeletedAction {
-  id: string
-  type: string
-}
+export type CrdtTableDeletedAction =
+  | {
+      id: string
+      type: string
+    }
+  | {
+      ids: string[]
+      type: string
+    }
 
 export function defineCreatedCrdtTable<
   CreateFields extends object,
