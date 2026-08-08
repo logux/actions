@@ -27,6 +27,10 @@ test('creates created action', () => {
     id: 'uuid',
     type: 'users/created'
   })
+  deepStrictEqual(userCreated({ records: [{ id: 'uuid', name: 'A' }] }), {
+    records: [{ id: 'uuid', name: 'A' }],
+    type: 'users/created'
+  })
 })
 
 test('creates changed action', () => {
@@ -36,12 +40,21 @@ test('creates changed action', () => {
     id: 'uuid',
     type: 'users/changed'
   })
+  deepStrictEqual(userChanged({ fields: { name: 'A' }, ids: ['uuid'] }), {
+    fields: { name: 'A' },
+    ids: ['uuid'],
+    type: 'users/changed'
+  })
 })
 
 test('creates deleted action', () => {
   let userDeleted = defineDeletedCrdtTable(User)
   deepStrictEqual(userDeleted({ id: 'uuid' }), {
     id: 'uuid',
+    type: 'users/deleted'
+  })
+  deepStrictEqual(userDeleted({ ids: ['uuid'] }), {
+    ids: ['uuid'],
     type: 'users/deleted'
   })
 })

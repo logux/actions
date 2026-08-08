@@ -1,7 +1,7 @@
 import type { Client } from '@logux/client'
 import { createCrdtDatabase, number, string } from '@logux/client/db'
-import type { Database } from '@nanostores/sql'
 import { Action } from '@logux/core'
+import type { Database } from '@nanostores/sql'
 
 import { defineCreatedCrdtTable } from './index.js'
 
@@ -17,8 +17,12 @@ let userCreated = defineCreatedCrdtTable(User)
 
 function processAction(action: Action) {
   if (userCreated.match(action)) {
-    // THROWS 'firstName' does not exist on type
-    console.log(action.fields.firstName)
+    // THROWS Property 'fields' does not exist on type
+    console.log(action.fields.name)
+    if (`id` in action) {
+      // THROWS 'firstName' does not exist on type
+      console.log(action.fields.firstName)
+    }
   }
 }
 

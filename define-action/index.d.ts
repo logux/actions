@@ -4,6 +4,14 @@ interface Fields {
   [key: string]: unknown
 }
 
+/**
+ * `Omit` which is applied to each member of the union separately.
+ * It is necessary for actions with different shapes, like batch actions.
+ */
+type OmitFromUnion<Type, Keys extends keyof any> = Type extends unknown
+  ? Omit<Type, Keys>
+  : never
+
 export interface AbstractActionCreator<CreatedAction extends Action = Action> {
   (...args: any[]): CreatedAction
   type: string
@@ -11,7 +19,7 @@ export interface AbstractActionCreator<CreatedAction extends Action = Action> {
 
 export interface ActionCreator<
   CreatedAction extends Action = AnyAction,
-  CreatorArgs extends unknown[] = [Omit<CreatedAction, 'type'>]
+  CreatorArgs extends unknown[] = [OmitFromUnion<CreatedAction, 'type'>]
 > {
   match: (action: Action) => action is CreatedAction
   type: string
@@ -38,7 +46,7 @@ export interface ActionCreator<
 interface DefineAction {
   <CreatedAction extends Action>(
     type: CreatedAction['type']
-  ): ActionCreator<CreatedAction, [Omit<CreatedAction, 'type'>]>
+  ): ActionCreator<CreatedAction, [OmitFromUnion<CreatedAction, 'type'>]>
 
   <CreatedAction extends Action, CreatorArgs extends unknown[]>(
     type: CreatedAction['type'],
