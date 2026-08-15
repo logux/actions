@@ -6,7 +6,8 @@ export {
   defineChangedCrdtTable,
   defineCreatedCrdtTable,
   defineCrdtTableActions,
-  defineDeletedCrdtTable
+  defineDeletedCrdtTable,
+  NewCrdtRow
 } from './crdt-table/index.js'
 export {
   AbstractActionCreator,

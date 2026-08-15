@@ -1,10 +1,16 @@
 import type { ActionCreator } from '../define-action/index.js'
 
+export type NewCrdtRow<CreateFields extends object> = {
+  id?: string
+} & CreateFields
+
 export interface CrdtTable<
   CreateFields extends object = object,
   RowFields extends object = object
 > {
-  create(fields: { id?: string } & CreateFields): Promise<string>
+  create(
+    fields: NewCrdtRow<CreateFields> | NewCrdtRow<CreateFields>[]
+  ): Promise<string[] | string>
   readonly plural: string
   update(id: string, diff: Partial<RowFields>): Promise<void>
 }
