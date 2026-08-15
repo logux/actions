@@ -32,7 +32,6 @@
     "@nanostores/sql": "^0.4.1",
     "@size-limit/preset-small-lib": "^13.0.3",
     "@types/ws": "^8.18.1",
-    "actions-up": "^1.17.0",
     "better-node-test": "^1.0.0",
     "check-dts": "^2.0.1",
     "eslint-plugin-prefer-let": "^4.2.2",
