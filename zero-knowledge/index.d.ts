@@ -7,10 +7,9 @@ export interface ZeroAction {
   compressed: boolean
 }
 
-export interface ZeroCleanAction {
-  id: string
+export type ZeroCleanAction = {
   type: '0/clean'
-}
+} & ({ id: string } | { ids: string[] })
 
 /**
  * Returns `0` action.
