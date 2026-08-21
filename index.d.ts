@@ -21,6 +21,7 @@ export {
   loguxUndo,
   LoguxUndoAction
 } from './processing/index.js'
+export { shadow, ShadowAction } from './shadow/index.js'
 export {
   loguxSubscribe,
   LoguxSubscribeAction,

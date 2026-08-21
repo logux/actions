@@ -7,6 +7,7 @@ export {
 export { defineAction } from './define-action/index.js'
 export { LoguxNotFoundError } from './logux-not-found/index.js'
 export { loguxProcessed, loguxUndo } from './processing/index.js'
+export { shadow } from './shadow/index.js'
 export {
   loguxSubscribe,
   loguxSubscribed,
