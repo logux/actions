@@ -2,6 +2,16 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.6.0
+
+- Added CRDT Table actions.
+- Added shadow action.
+- Added batched `ids` variant to `0/clean` action.
+- Replaced `z` to `compressed` key in `0` action. 
+- Moved to binary data in zero-knowledge actions.
+- Moved to Logux Core 0.11.
+- Removed Node.js 20 support.
+
 ## 0.5.0
 
 - Added types for compressed E2EE actions.
