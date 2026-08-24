@@ -10,16 +10,16 @@ importers:
     devDependencies:
       '@logux/client':
         specifier: github:logux/client#next
-        version: git+https://github.com/logux/client.git#09d8b647e2e247dd7d85dc2c030fb1f648f1882b(@nanostores/sql@0.4.2(nanostores@1.5.1))(nanostores@1.5.1)
+        version: git+https://github.com/logux/client.git#b5e76e9cce75335a12d1684b3a52955efd772b00(@nanostores/sql@0.4.3(nanostores@1.5.2))(nanostores@1.5.2)
       '@logux/core':
-        specifier: github:logux/core#next
-        version: git+https://github.com/logux/core.git#022d28b6744af3c31f51a1ed03de8355fd6aef18
+        specifier: ^0.11.0
+        version: 0.11.0
       '@logux/oxc-configs':
         specifier: ^1.1.0
         version: 1.1.0(oxlint-tsgolint@7.0.2001)(oxlint@1.79.0(oxlint-tsgolint@7.0.2001))(typescript@7.0.2)
       '@nanostores/sql':
-        specifier: ^0.4.2
-        version: 0.4.2(nanostores@1.5.1)
+        specifier: ^0.4.3
+        version: 0.4.3(nanostores@1.5.2)
       '@size-limit/preset-small-lib':
         specifier: ^13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -36,8 +36,8 @@ importers:
         specifier: ^4.2.2
         version: 4.2.2
       nanostores:
-        specifier: ^1.5.1
-        version: 1.5.1
+        specifier: ^1.5.2
+        version: 1.5.2
       oxlint:
         specifier: ^1.79.0
         version: 1.79.0(oxlint-tsgolint@7.0.2001)
@@ -209,15 +209,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@logux/actions@git+https://github.com/logux/actions.git#5fcd33fc3684fe5731bbd74be357944f53b2b666':
-    resolution: {commit: 5fcd33fc3684fe5731bbd74be357944f53b2b666, repo: https://github.com/logux/actions.git, type: git}
+  '@logux/actions@git+https://github.com/logux/actions.git#eaf920ba94c93526a35f74b86b4f8079cefd170b':
+    resolution: {commit: eaf920ba94c93526a35f74b86b4f8079cefd170b, repo: https://github.com/logux/actions.git, type: git}
     version: 0.5.0
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
     peerDependencies:
       '@logux/core': ^0.10.0
 
-  '@logux/client@git+https://github.com/logux/client.git#09d8b647e2e247dd7d85dc2c030fb1f648f1882b':
-    resolution: {commit: 09d8b647e2e247dd7d85dc2c030fb1f648f1882b, repo: https://github.com/logux/client.git, type: git}
+  '@logux/client@git+https://github.com/logux/client.git#b5e76e9cce75335a12d1684b3a52955efd772b00':
+    resolution: {commit: b5e76e9cce75335a12d1684b3a52955efd772b00, repo: https://github.com/logux/client.git, type: git}
     version: 0.23.2
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
     peerDependencies:
@@ -248,9 +248,8 @@ packages:
       vue:
         optional: true
 
-  '@logux/core@git+https://github.com/logux/core.git#022d28b6744af3c31f51a1ed03de8355fd6aef18':
-    resolution: {commit: 022d28b6744af3c31f51a1ed03de8355fd6aef18, repo: https://github.com/logux/core.git, type: git}
-    version: 0.10.0
+  '@logux/core@0.11.0':
+    resolution: {integrity: sha512-MCI7NP6djTrt1xcybiGMwJFCq68VCGUtHdGu/Fq70u7f5sHLQ+385g/c91lueqy5yL7R7HiVGkywmA2n+H7Ltg==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
 
   '@logux/oxc-configs@1.1.0':
@@ -261,8 +260,8 @@ packages:
       oxlint-tsgolint: '>=0.18.1'
       typescript: ^6.0.2 || ^7.0.0
 
-  '@nanostores/sql@0.4.2':
-    resolution: {integrity: sha512-aHbQ9WimTfCu1VXITtr1xgPa6o2xyStlZHuneWvjQnZCSVO0csK64hUv9vMgR8KuEXvaCZ3bTL2X/zJS61nv/g==}
+  '@nanostores/sql@0.4.3':
+    resolution: {integrity: sha512-3yRh5UNkXszhwA+3uYp3Q68Q5ak+LroHBiGanaIn7aV8cLUX8XLodx01lLJEvWuapYAIVWIJQ57laB9q0UVVzQ==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
     peerDependencies:
       '@electric-sql/pglite': '>=0.4.0'
@@ -613,8 +612,8 @@ packages:
   nanospinner@1.2.2:
     resolution: {integrity: sha512-Zt/AmG6qRU3e+WnzGGLuMCEAO/dAu45stNbHY223tUxldaDAeE+FxSPsd9Q+j+paejmm0ZbrNVs5Sraqy3dRxA==}
 
-  nanostores@1.5.1:
-    resolution: {integrity: sha512-DNIX+HyFpo14fKGe0NsX9/aPzdKGiSZwX5xEMpDwQrDdo2iTiUYunOCCQLYwJrziKVe8ZOtVvcv0dEVI8lMx2g==}
+  nanostores@1.5.2:
+    resolution: {integrity: sha512-B0UbxzK1s0CN8Xht6r+7iT5+xV8PTaRERR1nATeplRv1Rw5YLWfVAid0hkqY3EceqpG4RjTk8GAwIxQY39Rnwg==}
     engines: {node: ^20.0.0 || >=22.0.0}
 
   oxlint-tsgolint@7.0.2001:
@@ -734,21 +733,21 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@logux/actions@git+https://github.com/logux/actions.git#5fcd33fc3684fe5731bbd74be357944f53b2b666(@logux/core@git+https://github.com/logux/core.git#022d28b6744af3c31f51a1ed03de8355fd6aef18)':
+  '@logux/actions@git+https://github.com/logux/actions.git#eaf920ba94c93526a35f74b86b4f8079cefd170b(@logux/core@0.11.0)':
     dependencies:
-      '@logux/core': git+https://github.com/logux/core.git#022d28b6744af3c31f51a1ed03de8355fd6aef18
+      '@logux/core': 0.11.0
 
-  '@logux/client@git+https://github.com/logux/client.git#09d8b647e2e247dd7d85dc2c030fb1f648f1882b(@nanostores/sql@0.4.2(nanostores@1.5.1))(nanostores@1.5.1)':
+  '@logux/client@git+https://github.com/logux/client.git#b5e76e9cce75335a12d1684b3a52955efd772b00(@nanostores/sql@0.4.3(nanostores@1.5.2))(nanostores@1.5.2)':
     dependencies:
-      '@logux/actions': git+https://github.com/logux/actions.git#5fcd33fc3684fe5731bbd74be357944f53b2b666(@logux/core@git+https://github.com/logux/core.git#022d28b6744af3c31f51a1ed03de8355fd6aef18)
-      '@logux/core': git+https://github.com/logux/core.git#022d28b6744af3c31f51a1ed03de8355fd6aef18
+      '@logux/actions': git+https://github.com/logux/actions.git#eaf920ba94c93526a35f74b86b4f8079cefd170b(@logux/core@0.11.0)
+      '@logux/core': 0.11.0
       nanoevents: 10.0.0
       nanoid: 6.0.1
-      nanostores: 1.5.1
+      nanostores: 1.5.2
     optionalDependencies:
-      '@nanostores/sql': 0.4.2(nanostores@1.5.1)
+      '@nanostores/sql': 0.4.3(nanostores@1.5.2)
 
-  '@logux/core@git+https://github.com/logux/core.git#022d28b6744af3c31f51a1ed03de8355fd6aef18':
+  '@logux/core@0.11.0':
     dependencies:
       nanoevents: 10.0.0
 
@@ -759,9 +758,9 @@ snapshots:
       oxlint-tsgolint: 7.0.2001
       typescript: 7.0.2
 
-  '@nanostores/sql@0.4.2(nanostores@1.5.1)':
+  '@nanostores/sql@0.4.3(nanostores@1.5.2)':
     dependencies:
-      nanostores: 1.5.1
+      nanostores: 1.5.2
 
   '@oxlint-tsgolint/darwin-arm64@7.0.2001':
     optional: true
@@ -974,7 +973,7 @@ snapshots:
     dependencies:
       picocolors: 1.1.1
 
-  nanostores@1.5.1: {}
+  nanostores@1.5.2: {}
 
   oxlint-tsgolint@7.0.2001:
     optionalDependencies:

@@ -1,3 +1,5 @@
 allowBuilds:
   esbuild: false
 blockExoticSubdeps: false
+minimumReleaseAgeExclude:
+  - '@logux/*'
