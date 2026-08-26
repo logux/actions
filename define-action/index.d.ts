@@ -70,5 +70,5 @@ export interface ActionPacker<
   ReducedAction extends Pick<Action, 'type'>
 > {
   pack(action: FullAction): PackedAction<ReducedAction> | undefined
-  unpack(action: PackedAction<ReducedAction>): FullAction | undefined
+  unpack(action: PackedAction<ReducedAction>): FullAction
 }
