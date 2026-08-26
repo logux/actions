@@ -66,8 +66,8 @@ export type PackedAction<ReducedAction extends Pick<Action, 'type'>> = {
  * in custom packers in SQL-based log stores.
  */
 export interface ActionPacker<
-  FullAction extends Action,
-  ReducedAction extends Pick<Action, 'type'>
+  FullAction extends Action = AnyAction,
+  ReducedAction extends Pick<FullAction, 'type'> = Pick<FullAction, 'type'>
 > {
   pack(action: FullAction): PackedAction<ReducedAction> | undefined
   unpack(action: PackedAction<ReducedAction>): FullAction
