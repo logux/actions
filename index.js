@@ -22,4 +22,4 @@ export {
   defineDeleteSyncMap,
   defineSyncMapActions
 } from './sync-map/index.js'
-export { zero, zeroClean } from './zero-knowledge/index.js'
+export { zero, zeroClean, zeroPacker } from './zero-knowledge/index.js'

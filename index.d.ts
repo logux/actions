@@ -12,7 +12,8 @@ export {
 export {
   AbstractActionCreator,
   ActionCreator,
-  defineAction
+  defineAction,
+  ActionPacker
 } from './define-action/index.js'
 export { LoguxNotFoundError } from './logux-not-found/index.js'
 export {
@@ -51,5 +52,6 @@ export {
   zero,
   ZeroAction,
   zeroClean,
-  ZeroCleanAction
+  ZeroCleanAction,
+  zeroPacker
 } from './zero-knowledge/index.js'

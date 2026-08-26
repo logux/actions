@@ -55,3 +55,20 @@ interface DefineAction {
 }
 
 export const defineAction: DefineAction
+
+export type PackedAction<ReducedAction extends Pick<Action, 'type'>> = {
+  blob: Uint8Array
+  action: ReducedAction
+}
+
+/**
+ * Packer of actions with binary parts to binary format to use it
+ * in custom packers in SQL-based log stores.
+ */
+export interface ActionPacker<
+  FullAction extends Action,
+  ReducedAction extends Pick<Action, 'type'>
+> {
+  pack(action: FullAction): PackedAction<ReducedAction> | undefined
+  unpack(action: PackedAction<ReducedAction>): FullAction | undefined
+}

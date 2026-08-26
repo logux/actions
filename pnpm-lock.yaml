@@ -12,8 +12,8 @@ importers:
         specifier: ^0.24.1
         version: 0.24.1(@nanostores/sql@0.5.0(nanostores@1.5.2))(nanostores@1.5.2)
       '@logux/core':
-        specifier: ^0.11.3
-        version: 0.11.3
+        specifier: ^0.11.5
+        version: 0.11.5
       '@logux/oxc-configs':
         specifier: ^1.1.0
         version: 1.1.0(oxlint-tsgolint@7.0.2001)(oxlint@1.80.0(oxlint-tsgolint@7.0.2001))(typescript@7.0.2)
@@ -246,8 +246,8 @@ packages:
       vue:
         optional: true
 
-  '@logux/core@0.11.3':
-    resolution: {integrity: sha512-+Cmm2XgiRIpPdYJpDI23ZnJYuRCXmFCNjX3nYd+xddcQ8HX/pfwJqMORFjA3brNBX7d5HGi4/2zvw1I50r9v7Q==}
+  '@logux/core@0.11.5':
+    resolution: {integrity: sha512-olYML2wZ3xRbl6edEl9jUU1nYEus+nARAbSooOx+CnLUKtH+mF/3UI5cbKo7S12PM4LQlzcO3ap6RjLvHO5bbg==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
 
   '@logux/oxc-configs@1.1.0':
@@ -731,21 +731,21 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@logux/actions@0.6.0(@logux/core@0.11.3)':
+  '@logux/actions@0.6.0(@logux/core@0.11.5)':
     dependencies:
-      '@logux/core': 0.11.3
+      '@logux/core': 0.11.5
 
   '@logux/client@0.24.1(@nanostores/sql@0.5.0(nanostores@1.5.2))(nanostores@1.5.2)':
     dependencies:
-      '@logux/actions': 0.6.0(@logux/core@0.11.3)
-      '@logux/core': 0.11.3
+      '@logux/actions': 0.6.0(@logux/core@0.11.5)
+      '@logux/core': 0.11.5
       nanoevents: 10.0.0
       nanoid: 6.0.1
       nanostores: 1.5.2
     optionalDependencies:
       '@nanostores/sql': 0.5.0(nanostores@1.5.2)
 
-  '@logux/core@0.11.3':
+  '@logux/core@0.11.5':
     dependencies:
       nanoevents: 10.0.0
 
