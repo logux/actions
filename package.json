@@ -1,6 +1,6 @@
 {
   "name": "@logux/actions",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Types and action creators for build-in Logux actions",
   "keywords": [
     "crdt",

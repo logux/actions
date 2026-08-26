@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.7.0
+
+- Added `ActionPacker` type.
+- Added `0` action binary packer.
+
 ## 0.6.0
 
 - Added CRDT Table actions.
