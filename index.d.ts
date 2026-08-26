@@ -13,7 +13,8 @@ export {
   AbstractActionCreator,
   ActionCreator,
   defineAction,
-  ActionPacker
+  ActionPacker,
+  ActionPackerMap
 } from './define-action/index.js'
 export { LoguxNotFoundError } from './logux-not-found/index.js'
 export {

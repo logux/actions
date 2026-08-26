@@ -72,3 +72,21 @@ export interface ActionPacker<
   pack(action: FullAction): PackedAction<ReducedAction> | undefined
   unpack(action: PackedAction<ReducedAction>): FullAction
 }
+
+/**
+ * Checks that every key of the packers map is equal to `type` of the action,
+ * which packer packs.
+ *
+ * ```ts
+ * function createStore<Packers extends ActionPackerMap<Packers>>(
+ *   packers: Packers
+ * ): Store
+ *
+ * createStore({ '0': zeroPacker })
+ * ```
+ */
+export type ActionPackerMap<Packers> = {
+  [Type in keyof Packers]: Type extends string
+    ? ActionPacker<Action & { type: Type }, { type: Type }>
+    : never
+}

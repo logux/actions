@@ -1,7 +1,7 @@
 import type { Action } from '@logux/core'
 
-import type { ActionPacker, PackedAction } from '../define-action/index.js'
-import { defineAction, zeroPacker } from '../index.js'
+import type { ActionPackerMap, PackedAction } from '../define-action/index.js'
+import { defineAction, zero, zeroPacker } from '../index.js'
 
 type RenameAction = {
   name: string
@@ -17,14 +17,25 @@ function processAction(action: Action): void {
 
 processAction({ type: 'other' })
 
-let packers: ActionPacker[] = [zeroPacker]
+declare function createStore<Packers extends ActionPackerMap<Packers>>(
+  packers: Packers
+): Packers
+
+let packers = createStore({
+  '0': zeroPacker
+})
 
 function packAction(action: Action): PackedAction<Action> | undefined {
-  for (let packer of packers) {
-    let packed = packer.pack(action)
+  if (zero.match(action)) {
+    let packed = packers['0'].pack(action)
     if (packed) return packed
   }
   return undefined
 }
 
 packAction(rename({ name: 'New' }))
+
+let standalone = { '0': zeroPacker }
+let checked: ActionPackerMap<typeof standalone> = standalone
+
+console.log(checked)
