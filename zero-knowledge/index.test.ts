@@ -84,7 +84,8 @@ test('has lossless round-trip', () => {
 test('does not use blob memory of packed action', () => {
   let action = zero({ compressed: false, d: bytes(100, 4), iv: bytes(0, 12) })
   let packed = zeroPacker.pack(action)!
-  let unpacked = zeroPacker.unpack(packed)!
+  equal(packed.blob.length, 16)
+  let unpacked = zeroPacker.unpack(packed)
   packed.blob.fill(0)
   deepStrictEqual(unpacked.d, bytes(100, 4))
   deepStrictEqual(unpacked.iv, bytes(0, 12))
