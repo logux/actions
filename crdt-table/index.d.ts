@@ -1,15 +1,17 @@
 import type { ActionCreator } from '../define-action/index.js'
 
-export type NewCrdtRow<CreateFields extends object> = {
+export type AbstractNewCrdtRow<CreateFields extends object> = {
   id?: string
 } & CreateFields
 
-export interface CrdtTable<
+export interface AbstractCrdtTable<
   CreateFields extends object = object,
   RowFields extends object = object
 > {
   create(
-    fields: NewCrdtRow<CreateFields> | NewCrdtRow<CreateFields>[]
+    fields:
+      | AbstractNewCrdtRow<CreateFields>
+      | AbstractNewCrdtRow<CreateFields>[]
   ): Promise<string[] | string>
   readonly plural: string
   update(id: string, diff: Partial<RowFields>): Promise<void>
@@ -49,18 +51,18 @@ export function defineCreatedCrdtTable<
   CreateFields extends object,
   RowFields extends object
 >(
-  table: CrdtTable<CreateFields, RowFields>
+  table: AbstractCrdtTable<CreateFields, RowFields>
 ): ActionCreator<CrdtTableCreatedAction<CreateFields>>
 
 export function defineChangedCrdtTable<
   CreateFields extends object,
   RowFields extends object
 >(
-  table: CrdtTable<CreateFields, RowFields>
+  table: AbstractCrdtTable<CreateFields, RowFields>
 ): ActionCreator<CrdtTableChangedAction<RowFields>>
 
 export function defineDeletedCrdtTable(
-  table: CrdtTable
+  table: AbstractCrdtTable
 ): ActionCreator<CrdtTableDeletedAction>
 
 /**
@@ -84,7 +86,7 @@ export function defineCrdtTableActions<
   CreateFields extends object,
   RowFields extends object
 >(
-  table: CrdtTable<CreateFields, RowFields>
+  table: AbstractCrdtTable<CreateFields, RowFields>
 ): [
   ActionCreator<CrdtTableCreatedAction<CreateFields>>,
   ActionCreator<CrdtTableChangedAction<RowFields>>,

@@ -1,13 +1,13 @@
 export {
-  CrdtTable,
+  AbstractCrdtTable,
+  AbstractNewCrdtRow,
   CrdtTableChangedAction,
   CrdtTableCreatedAction,
   CrdtTableDeletedAction,
   defineChangedCrdtTable,
   defineCreatedCrdtTable,
   defineCrdtTableActions,
-  defineDeletedCrdtTable,
-  NewCrdtRow
+  defineDeletedCrdtTable
 } from './crdt-table/index.js'
 export {
   AbstractActionCreator,
