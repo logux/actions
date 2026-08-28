@@ -9,17 +9,17 @@ importers:
   .:
     devDependencies:
       '@logux/client':
-        specifier: ^0.24.1
-        version: 0.24.1(@nanostores/sql@0.5.0(nanostores@1.5.2))(nanostores@1.5.2)
+        specifier: ^0.25.0
+        version: 0.25.0(@nanostores/sql@0.5.2(nanostores@1.5.2))(nanostores@1.5.2)
       '@logux/core':
-        specifier: ^0.11.5
-        version: 0.11.5
+        specifier: ^0.11.6
+        version: 0.11.6
       '@logux/oxc-configs':
         specifier: ^1.1.0
         version: 1.1.0(oxlint-tsgolint@7.0.2001)(oxlint@1.80.0(oxlint-tsgolint@7.0.2001))(typescript@7.0.2)
       '@nanostores/sql':
-        specifier: ^0.5.0
-        version: 0.5.0(nanostores@1.5.2)
+        specifier: ^0.5.2
+        version: 0.5.2(nanostores@1.5.2)
       '@size-limit/preset-small-lib':
         specifier: ^13.0.3
         version: 13.0.3(size-limit@13.0.3)
@@ -209,14 +209,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@logux/actions@0.6.0':
-    resolution: {integrity: sha512-06BB0Ixpp6PwYttJlj9IWWTwjy65QgtzpVeRLY6dnUcXwmw3Z1FcdqtBzl8IWSeGjPCLBJPfGIxN2hjPmb/p2g==}
+  '@logux/actions@0.7.2':
+    resolution: {integrity: sha512-a1/VPoXCXzEty3OKh2HVdK8PLEXsBowmP6dHfaPWmaaxiZ7arOHnD2XY3Jts9yOSf0zXr+8zF1FWiZ0CXygOzw==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
     peerDependencies:
       '@logux/core': ^0.11.0
 
-  '@logux/client@0.24.1':
-    resolution: {integrity: sha512-TrLX4ozvXuPJCnhudCwTbYzvRcpJwGbzwdGK/GDzR3167Dt6i5khuuTqVYC2dG4iUon3rRslb9Idb+QxMIlz+A==}
+  '@logux/client@0.25.0':
+    resolution: {integrity: sha512-owVGUSm1fJ9R8NNAFFOy+LFNN87jcHHDci3JNVknoKXu8QtIwFWgGg/tMMI2zEEb3jsAiQKqLHdHCccFEIlV9w==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
     peerDependencies:
       '@nanostores/preact': '>=0.0.0'
@@ -246,8 +246,8 @@ packages:
       vue:
         optional: true
 
-  '@logux/core@0.11.5':
-    resolution: {integrity: sha512-olYML2wZ3xRbl6edEl9jUU1nYEus+nARAbSooOx+CnLUKtH+mF/3UI5cbKo7S12PM4LQlzcO3ap6RjLvHO5bbg==}
+  '@logux/core@0.11.6':
+    resolution: {integrity: sha512-N2Dg6ix0lFUe7s6aoRTzbri3gwLAsOcZZM3yCVHtatTJw35lgz5w976p+kn4LSwB7AWOYMc8wGsN5qQFxkQK+w==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
 
   '@logux/oxc-configs@1.1.0':
@@ -258,8 +258,8 @@ packages:
       oxlint-tsgolint: '>=0.18.1'
       typescript: ^6.0.2 || ^7.0.0
 
-  '@nanostores/sql@0.5.0':
-    resolution: {integrity: sha512-+1I/apmNTD5TnseCq4Y4HkHEsN2HbjJ6meIu1gGKbdO5H74lc9QtWWXCqWMojo+Hgfe4Mbt6a0BHmOLZR/Jocw==}
+  '@nanostores/sql@0.5.2':
+    resolution: {integrity: sha512-5lvLzxcg2aKCo0e2FUt9OsPmy8zQK47VMaLXkRbsUUd40s6QK1SjFeK621G2gXfV/0z8fngfQgdBnrCDcU5Iqg==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
     peerDependencies:
       '@electric-sql/pglite': '>=0.4.0'
@@ -443,8 +443,8 @@ packages:
     peerDependencies:
       size-limit: 13.0.3
 
-  '@types/node@26.3.0':
-    resolution: {integrity: sha512-L3fgrnchriRC2ExBflb8j4uZZURHZfQsmQeyVzhjcHW4kkwVyo8/0h1B2MVzMTrYUJYu6G7EWs14hW/L9putqw==}
+  '@types/node@26.4.0':
+    resolution: {integrity: sha512-faiGnoIrLH/V8cibOMEAZ8pMw6oXqSukl29ra4mN8GdaB2ZewzeaLj+INpV5N+Z1eKWzY+IzaIZH2EIR6YZRNQ==}
 
   '@types/ws@8.18.1':
     resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
@@ -731,21 +731,21 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@logux/actions@0.6.0(@logux/core@0.11.5)':
+  '@logux/actions@0.7.2(@logux/core@0.11.6)':
     dependencies:
-      '@logux/core': 0.11.5
+      '@logux/core': 0.11.6
 
-  '@logux/client@0.24.1(@nanostores/sql@0.5.0(nanostores@1.5.2))(nanostores@1.5.2)':
+  '@logux/client@0.25.0(@nanostores/sql@0.5.2(nanostores@1.5.2))(nanostores@1.5.2)':
     dependencies:
-      '@logux/actions': 0.6.0(@logux/core@0.11.5)
-      '@logux/core': 0.11.5
+      '@logux/actions': 0.7.2(@logux/core@0.11.6)
+      '@logux/core': 0.11.6
       nanoevents: 10.0.0
       nanoid: 6.0.1
       nanostores: 1.5.2
     optionalDependencies:
-      '@nanostores/sql': 0.5.0(nanostores@1.5.2)
+      '@nanostores/sql': 0.5.2(nanostores@1.5.2)
 
-  '@logux/core@0.11.5':
+  '@logux/core@0.11.6':
     dependencies:
       nanoevents: 10.0.0
 
@@ -756,7 +756,7 @@ snapshots:
       oxlint-tsgolint: 7.0.2001
       typescript: 7.0.2
 
-  '@nanostores/sql@0.5.0(nanostores@1.5.2)':
+  '@nanostores/sql@0.5.2(nanostores@1.5.2)':
     dependencies:
       nanostores: 1.5.2
 
@@ -851,13 +851,13 @@ snapshots:
       '@size-limit/file': 13.0.3(size-limit@13.0.3)
       size-limit: 13.0.3
 
-  '@types/node@26.3.0':
+  '@types/node@26.4.0':
     dependencies:
       undici-types: 8.3.0
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.4.0
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     optional: true
