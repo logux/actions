@@ -17,6 +17,7 @@ export {
   ActionPackerMap
 } from './define-action/index.js'
 export { LoguxNotFoundError } from './logux-not-found/index.js'
+export { loguxPrepare, LoguxPrepareAction } from './prepare/index.js'
 export {
   loguxProcessed,
   LoguxProcessedAction,
