@@ -29,16 +29,16 @@
     "@logux/client": "^0.25.2",
     "@logux/core": "^0.11.8",
     "@logux/oxc-configs": "^1.2.0",
-    "@nanostores/sql": "^0.5.3",
-    "@size-limit/preset-small-lib": "^13.0.3",
-    "@types/ws": "^8.18.1",
+    "@nanostores/sql": "^0.6.0",
+    "@size-limit/preset-small-lib": "^14.1.0",
+    "@types/ws": "^8.18.2",
     "better-node-test": "^1.0.0",
     "check-dts": "^2.0.1",
     "eslint-plugin-prefer-let": "^4.2.2",
-    "nanostores": "^1.5.3",
-    "oxlint": "^1.82.0",
-    "oxlint-tsgolint": "^7.0.2001",
-    "size-limit": "^13.0.3",
+    "nanostores": "^1.5.4",
+    "oxlint": "^1.87.0",
+    "oxlint-tsgolint": "^7.0.2003",
+    "size-limit": "^14.1.0",
     "typescript": "^7.0.2"
   },
   "peerDependencies": {
@@ -47,7 +47,7 @@
   "size-limit": [
     {
       "import": "{ defineAction }",
-      "limit": "51 B"
+      "limit": "54 B"
     }
   ],
   "engines": {
