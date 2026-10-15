@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.8.1
+
+- Fixed peer dependency.
+
 ## 0.8.0
 
 - Added `logux/prepare` action.
